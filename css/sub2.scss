@@ -147,7 +147,7 @@ $h3Lh : #{'min(40px, 1rem)'};
           width: 100%;
           height: 100%;
           @include image();
-          background-image: url('./images/02SUB_2/01.\ sub02_main_01.jpg');
+          background-image: url('./images/02sub_2/01.\ sub02_main_01.jpg');
         }
         .textRight{
           position: absolute;
@@ -252,7 +252,7 @@ $h3Lh : #{'min(40px, 1rem)'};
               height: calc(100% / 3);
               @for $img from 1 through 3 {  
                 &.i#{$img}{
-                    background-image: url('./images/02SUB_2/02.\ sub02_cnt01_01_#{$img}.jpg');
+                    background-image: url('./images/02sub_2/02.\ sub02_cnt01_01_#{$img}.jpg');
                 }
             }
             }
@@ -376,7 +376,7 @@ $h3Lh : #{'min(40px, 1rem)'};
                   height: calc(100% / 3);
                   @for $img from 1 through 3 {  
                     &.i#{$img}{
-                        background-image: url('./images/02SUB_2/02.\ sub02_cnt02_left_0#{$img}.jpg');
+                        background-image: url('./images/02sub_2/02.\ sub02_cnt02_left_0#{$img}.jpg');
                     }
                 }
                 }
@@ -401,7 +401,7 @@ $h3Lh : #{'min(40px, 1rem)'};
                 .image{
                   width: 100%;
                   height: inherit;
-                  background-image: url('./images/02SUB_2/02.\ sub02_cnt02_01.jpg');
+                  background-image: url('./images/02sub_2/02.\ sub02_cnt02_01.jpg');
                 }
               }
             }
@@ -462,7 +462,7 @@ $h3Lh : #{'min(40px, 1rem)'};
                 background-color: #ccc;
                 @for $img from 1 through 3 {  
                   &.i#{$img}{
-                      background-image: url('./images/02SUB_2/02.\ sub02_cnt03_0#{$img}.jpg');
+                      background-image: url('./images/02sub_2/02.\ sub02_cnt03_0#{$img}.jpg');
                   }
               }
               }
@@ -479,7 +479,7 @@ $h3Lh : #{'min(40px, 1rem)'};
               background-color: pink;
               height: inherit;
               .image{
-                background-image: url('./images/02SUB_2/lasgovg.jpg');
+                background-image: url('./images/02sub_2/lasgovg.jpg');
                 width: 100%;
                 height: 100%;
               }
