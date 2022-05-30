@@ -1,0 +1,476 @@
+// 반응형 기준 (본 페이지는 적응형 웹)
+html{
+  font-size: 3vw;
+
+  body{
+      font-size: 0.7vw;
+  }
+}
+
+// mixin 사용
+@mixin grid {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+@mixin image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 불필요한 스크롤 삭제 */
+html,body{
+width: 100%;
+overflow-x: hidden;
+}
+
+// 공통 폰트 영역
+/* html 3vw = 1rem = 40px, body 0.7vw = 1em = 10px*/
+
+// mnTop
+$mnTopMid : #{'min(12px, 1.2em)'};
+$mnTopNav : #{'min(15px, 1.5em)'};
+$mnTopLh : #{'min(80px, 2rem)'};
+
+// font-size
+$h4Fz : #{'min(12px, 1.2em)'};
+$h4Lh : #{'min(40px, 1rem)'};
+$pFz : #{'min(17px, 1.7em)'};
+$pLh : #{'min(30px, 3em)'};
+$btnFz : #{'min(15px, 1.5em)'};
+$btnLh : #{'min(40px, 1rem)'};
+$h3Fz : #{'min(30px, 3em)'};
+$h3Lh : #{'min(40px, 1rem)'};
+
+
+// font-family
+@mixin ff($fontname, $url) {
+  @font-face {
+      font-family: '#{$fontname}';
+      src: url('./fonts/#{$url}') format('truetype');
+  }
+}
+
+@include ff(PTSerif-Regular, 'PTSerif-Regular.ttf');
+@include ff(PatuaOne-Regular, 'PatuaOne-Regular.ttf');
+@include ff(AlegreyaSans-Regular, 'AlegreyaSans-Regular.ttf');
+
+// mnTop
+.mnTopWrap{
+  .mnTop{
+      @include grid();
+      display: flex;
+      justify-content: space-between;
+      line-height: $mnTopLh;
+      color: #929ca6;
+      font-weight: 700;
+      h1{
+          @include image();
+          width: calc(100% / 12 * 2);
+          height: #{'min(40px, 1rem)'};
+          background-image: url('./images/00main/00logo.JPG');
+          background-size: contain;
+          margin-top: #{'min(20px, 2em)'};
+          cursor: pointer;
+          a{
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+      }
+      .mnMiddle{
+          
+          :nth-child(2){
+              margin-right: #{'min(30px, 3em)'};
+          }
+      }
+      .mnLeft{
+          nav{
+              display: flex;
+              justify-content: space-between;
+              div{
+                  margin-left: #{'min(30px, 3.0em)'};
+                  cursor: pointer;
+                  a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                  }
+              }
+          }
+      }
+  }
+}
+
+
+
+// main
+.mainWrap{
+  main{
+    height:  #{'min(320px, 8rem)'};
+    position: relative;
+    @include grid();
+    .texts{
+      position: relative;
+      z-index: 999;
+      h4{
+        font-size: $h4Fz;
+        line-height: $h4Lh;
+        padding-top: #{'min(40px, 1rem)'};
+      }
+      h2{
+        font-size: #{'min(50px, 5.0em)'};
+        font-weight: 700;
+        font-family: 'PTSerif-Regular';
+      }
+    }
+    .images{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height:  #{'min(320px, 8rem)'};
+      width: calc(100% / 12 * 9);
+      .ovrGrid{
+        width: calc((100vw - 1080px) / 2 + 100%);
+        min-width: calc((100vw - 80vw) / 2 + 100%);
+        height: inherit;
+        .image{
+          width: 100%;
+          height: 100%;
+          @include image();
+          background-image: url('./images/01sub_1/01.\ main.jpg');
+        }
+      }
+    }
+  }
+}
+
+// contnet
+
+.cntWrap{
+  .content{
+    @include grid();
+    header{
+      margin-top:  #{'min(40px, 1rem)'};
+      ul{
+        width: calc(100% / 12 * 9);
+        display: flex;
+        justify-content: space-between;
+        li{
+          font-size:  #{'min(15px, 1.5em)'};
+          line-height:  #{'min(80px, 2rem)'};
+          cursor: pointer;
+          font-family: 'PatuaOne-Regular';
+        }
+      }
+    }
+
+    section{
+      display: flex;
+      justify-content: space-between;
+
+      .artLeft{
+        width: 50%;
+      }
+      .artRight{
+        width: 50%;
+      }
+
+      article{
+        position: relative;
+        .texts{
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          z-index: 99999;
+          background-color: #000;
+          color: #fff;
+          opacity: 0.7;
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-top: #{'min(40px, 1rem)'};
+          padding-bottom: #{'min(40px, 1rem)'};
+          h4{
+            font-size: $h4Fz;
+            line-height: $h4Lh;
+          }
+          h3{
+            font-size: $h3Fz;
+            line-height: $h3Lh;
+            font-weight: 500;
+            font-family: 'PTSerif-Regular';
+            text-shadow: 1px 1px 2px #929ca6;
+          }
+          p{
+            font-size: #{'min(15px, 1.5em)'};
+            line-height: #{'min(20px, 2em)'};
+            font-family: 'PatuaOne-Regular';        
+          }
+        }
+        .image{
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: #ccc;
+          @include image();
+          @for $img from 1 through 8 {  
+              width: 100%;
+              height: 100%;
+              &.i#{$img}{
+                  background-image: url('./images/01sub_1/02.\ sub0#{$img}.jpg');
+              }
+          }
+        }
+      }
+
+      .a1{
+        height: #{'min(640px, 16rem)'};
+        width: 100%;
+        &:hover>.texts{
+          opacity: 0.7;
+          margin-left: 0px;
+        }
+        .texts{
+          opacity: 0;
+          margin-left: -100%;
+          transition: all 1s;
+          h3{
+            padding-top: #{'min(200px, 5rem)'};
+          }
+        }
+      }
+
+      .artGroup{
+        display: flex;
+        justify-content: space-between;
+        height: #{'min(320px, 8rem)'};
+        .a2{
+          width: 50%;
+          &:hover>.texts{
+            opacity: 0.7;
+            margin-left: 0px;
+          }
+          .texts{
+            opacity: 0;
+            margin-left: -100%;
+            transition: all 1s;
+            p{
+              padding-top: #{'min(40px, 1rem)'};
+            }
+          }
+        }
+        .a3{
+          width: 50%;
+          &:hover>.texts{
+            opacity: 0.7;
+            margin-top: 0px;
+            height: 100%;
+          }
+          .texts{
+            opacity: 0;
+            margin-top: 100%;
+            height: 0;
+            overflow: hidden;
+            transition: all 1s;
+            p{
+              padding-top: #{'min(40px, 1rem)'};
+            }
+          }
+        }
+      }
+
+      .a4{
+        position: relative;
+        height: #{'min(640px, 16rem)'};
+        width: 100%;
+        &:hover>.texts{
+          opacity: 0.7;
+          margin-top: 0px;
+          height: 100%;
+        }
+        .texts{
+          opacity: 0;
+          margin-top: 100%;
+          height: 0;
+          overflow: hidden;
+          transition: all 1s;
+          h3{
+            padding-top: #{'min(280px, 7rem)'};
+          }
+        }
+        .image{
+          background-position: 20%;
+        }
+        .sign{
+          position: absolute;
+          bottom: 0;
+          right: 20px;
+          z-index: 99999;
+          @include image();
+          background-image: url('./images/01sub_1/sign.png');
+          width: calc(100% / 6 * 3);
+          height: #{'min(120px, 3rem)'};
+        }
+      }
+
+      .a5{
+        height: #{'min(320px, 8rem)'};
+        width: 100%;
+        &:hover>.texts{
+          opacity: 0.7;
+          margin-left: 0px;
+          height: 100%;
+        }
+        .texts{
+          text-align: right;
+          opacity: 0;
+          margin-left: 100%;
+          transition: all 1s;
+          h3{
+            padding-top: #{'min(80px, 2rem)'};
+          }
+        }
+      }
+
+      .a6{
+        height: #{'min(640px, 16rem)'};
+        width: 100%;
+        &:hover>.texts{
+          opacity: 0.7;
+          margin-left: 0px;
+        }
+        .texts{
+          text-align: center;
+          opacity: 0;
+          margin-left: 100%;
+          transition: all 1s;
+          h3{
+            padding-top: #{'min(240px, 6rem)'};
+          }
+        }
+      }
+
+      .a7{
+        height: #{'min(320px, 8rem)'};
+        width: 100%;
+        &:hover>.texts{
+          opacity: 0.7;
+          margin-left: 0px;
+        }
+        .texts{
+          opacity: 0;
+          margin-left: 100%;
+          transition: all 1s;
+          p{
+            padding-top: #{'min(40px, 1rem)'};
+          }
+        }
+      }
+      .a8{
+        height: #{'min(320px, 8rem)'};
+        width: 100%;
+        &:hover>.texts{
+          opacity: 0.7;
+          margin-top: 0px;
+          height: 100%;
+        }
+        .texts{
+          opacity: 0;
+          margin-top:  #{'min(240px, 6rem)'};
+          height: 0;
+          overflow: hidden;
+          transition: all 1s;
+          h3{
+            padding-top: #{'min(60px, 6em)'};
+          }
+        }
+      }
+
+
+
+    }
+  }
+}
+
+// footer
+.ftrWrap{
+  background-color: #efefef;
+  margin-top: #{'min(80px, 2rem)'};
+  footer{
+      @include grid();
+      color: #1d1d1d;
+      font-size: #{'min(15px, 1.5em)'};
+      display: flex;
+      justify-content: space-between;
+      padding-top: #{'min(80px, 2rem)'};
+      padding-bottom: #{'min(80px, 2rem)'};
+      ul{
+          width: calc(100% / 4);
+          &:nth-child(1){
+              li{
+                  &:nth-child(1){
+                      line-height: #{'min(40px, 1rem)'};
+                  }
+                  &:nth-child(2){
+                      line-height: #{'min(40px, 1rem)'};
+                  }
+                  &:nth-child(3){
+                      line-height: #{'min(80px, 2rem)'};
+                  }
+                  &:nth-child(4){
+                      line-height: #{'min(20px, 2em)'};
+                  }
+              }
+          }
+          
+          &:nth-child(n+2){
+              li{
+                  &:nth-child(1){
+                      margin-top: #{'min(40px, 1rem)'};
+                      line-height: #{'min(40px, 1rem)'};
+                  }
+                  &:nth-child(2){
+                      line-height: #{'min(80px, 2rem)'};
+                  }
+                  &:nth-child(3){
+                      line-height: #{'min(20px, 2em)'};
+                  }
+              }
+          }
+
+          &:nth-child(3){
+              li{
+                  &:nth-child(3){
+                      font-size: #{'min(15px, 1.5em)'};
+                      font-weight: 700;
+                      span{
+                          cursor: pointer;
+                          margin: 0 10px;
+                          font-weight: 700;
+                          font-size: #{'min(15px, 1.5em)'};
+                          a{
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                          }
+                      }
+                  }
+              }
+          }
+          &:nth-child(4){
+              text-align: right;
+              li{
+                  &:nth-child(1){
+                      background-color: #000;
+                      color: #fff;
+                      text-align: center;
+                      cursor: pointer;
+                  }
+              }
+          }
+      }
+  }
+}

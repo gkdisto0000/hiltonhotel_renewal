@@ -1,0 +1,574 @@
+// 반응형 기준 (본 페이지는 적응형 웹)
+html{
+  font-size: 3vw;
+
+  body{
+      font-size: 0.7vw;
+  }
+}
+
+// mixin 사용
+@mixin grid {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+@mixin image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 불필요한 스크롤 삭제 */
+html,body{
+width: 100%;
+overflow-x: hidden;
+}
+
+// 공통 폰트 영역
+/* html 3vw = 1rem = 40px, body 0.7vw = 1em = 10px*/
+
+// mnTop
+$mnTopMid : #{'min(12px, 1.2em)'};
+$mnTopNav : #{'min(15px, 1.5em)'};
+$mnTopLh : #{'min(80px, 2rem)'};
+
+// font-size
+$h4Fz : #{'min(12px, 1.2em)'};
+$h4Lh : #{'min(40px, 1rem)'};
+$pFz : #{'min(15px, 1.5em)'};
+$pLh : #{'min(30px, 3em)'};
+$btnFz : #{'min(15px, 1.5em)'};
+$btnLh : #{'min(40px, 1rem)'};
+$h3Fz : #{'min(30px, 3em)'};
+$h3Lh : #{'min(40px, 1rem)'};
+
+
+// font-family
+@mixin ff($fontname, $url) {
+  @font-face {
+      font-family: '#{$fontname}';
+      src: url('./fonts/#{$url}') format('truetype');
+  }
+}
+
+@include ff(PTSerif-Regular, 'PTSerif-Regular.ttf');
+@include ff(PatuaOne-Regular, 'PatuaOne-Regular.ttf');
+@include ff(AlegreyaSans-Regular, 'AlegreyaSans-Regular.ttf');
+
+// mnTop
+.mnTopWrap{
+  .mnTop{
+      @include grid();
+      display: flex;
+      justify-content: space-between;
+      line-height: $mnTopLh;
+      color: #929ca6;
+      font-weight: 700;
+      h1{
+          @include image();
+          width: calc(100% / 12 * 2);
+          height: #{'min(40px, 1rem)'};
+          background-image: url('./images/00main/00logo.JPG');
+          background-size: contain;
+          margin-top: #{'min(20px, 2em)'};
+          cursor: pointer;
+          a{
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+      }
+      .mnMiddle{
+          
+          :nth-child(2){
+              margin-right: #{'min(30px, 3em)'};
+          }
+      }
+      .mnLeft{
+          nav{
+              display: flex;
+              justify-content: space-between;
+              div{
+                  margin-left: #{'min(30px, 3.0em)'};
+                  cursor: pointer;
+                  a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                  }
+              }
+          }
+      }
+  }
+}
+
+// main
+.mainWrap{
+  main{
+    @include grid();
+    position: relative;
+    height:  #{'min(680px, 17rem)'};
+    .textLeft{
+      width: calc(100% / 12 * 5);
+      padding-right: 20px;
+      position: relative;
+      z-index: 999999;
+      padding-top: #{'min(300px, 30em)'};
+      .texts{
+        text-align: right;
+        z-index: 999;
+        color: #fff;
+        h4{
+          font-size: $h4Fz;
+          line-height: $h4Lh;
+          padding-top: #{'min(40px, 1rem)'};
+        }
+        h2{
+          font-size: #{'min(50px, 5.0em)'};
+          font-family: 'PTSerif-Regular';
+        }
+      }
+    }
+    .images{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height:  #{'min(680px, 17rem)'};
+      width: 100%;
+      .ovrGrid{
+        position: relative;
+        width: calc((100vw - 1080px) / 2 + 100%)
+        ;
+        min-width: calc((100vw - 80vw) / 2 + 100%);
+        height: inherit;
+        background-color: #ccc;
+        .image{
+          width: 100%;
+          height: 100%;
+          @include image();
+          background-image: url('./images/02SUB_2/01.\ sub02_main_01.jpg');
+        }
+        .textRight{
+          position: absolute;
+          height: inherit;
+          top: 0;
+          right: 0;
+          color: #fff;
+          width: calc((100vw - 1080px) / 2);
+          .dim{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            opacity: 0.5;
+            height: inherit;
+            width: inherit;
+            z-index: 0;
+          }
+          .texts{
+            padding-left: 20px;
+            padding-right: 20px;
+            position: relative;
+            padding-top: #{'min(240px, 6rem)'};
+            h5{
+              font-size: #{'min(16px, 1.6em)'};
+              border-bottom: 1px solid #ccc;
+              width: calc(100% / 8);
+              &:nth-child(n+2){
+                padding-top: #{'min(40px, 1rem)'};
+              }
+            }
+            h3{
+              font-size: #{'min(13px, 1.3em)'};
+              line-height: #{'min(40px, 1rem)'};
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+// content
+.cntWrap{
+  .content{
+    @include grid();
+    // cnt 공통영역
+    .image{
+      @include image();
+    }
+    .texts{
+      h4{
+        font-size: $h4Fz;
+        line-height: $h4Lh;
+        padding-top: #{'min(40px, 1rem)'};
+      }
+      h2{
+        font-size: #{'min(50px, 5.0em)'};
+        font-weight: 700;
+        font-family: 'PTSerif-Regular';
+      }
+      h3{
+        font-size: $h3Fz;
+        line-height: $h3Lh;
+        font-weight: 500;
+        font-family: 'PTSerif-Regular';
+        text-shadow: 1px 1px 2px #929ca6;
+      }
+      p{
+        font-size: $pFz;
+        line-height: $pLh;
+      }
+    }
+
+    // cnt01
+    &.cnt01{
+      height: #{'min(560px, 14rem)'};
+      position: relative;
+      header{
+        display: none;
+      }
+      .images{
+        width: calc(100% / 12 * 7);
+        height: #{'min(360px, 9rem)'};
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        direction: rtl;
+        .ovrGrid{
+          background-position: right;
+          width: calc((100vw - 1080px) / 2 + 100%);
+          min-width: calc((100vw - 80vw) / 2 + 100%);
+          margin-left: calc((100vw - 1080px) / -2);
+          height: 100%;
+          background-color: #ccc;
+          overflow: hidden;
+          .artGroup{
+            width: 100%;
+            height: 300%;
+            .image{
+              height: calc(100% / 3);
+              @for $img from 1 through 3 {  
+                &.i#{$img}{
+                    background-image: url('./images/02SUB_2/02.\ sub02_cnt01_01_#{$img}.jpg');
+                }
+            }
+            }
+          }
+        }
+      }
+      .num{
+        padding-top: #{'min(160px, 4rem)'};
+        font-size: #{'min(18px, 1.8em)'};
+        font-family: 'PatuaOne-Regular';
+        line-height: #{'min(30px, 3em)'};
+        color: #929ca6;
+        margin-left: 10px;
+      }
+      .texts{
+        width: calc(100%/12 * 5);
+        height: #{'min(560px, 14rem)'};
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #fff;
+        padding-top: #{'min(60px, 6em)'};
+        padding-left: #{'min(40px, 1rem)'};
+        padding-right: #{'min(80px, 2rem)'};
+        p{
+          margin-top: #{'min(40px, 1rem)'};
+        }
+        .btn{
+          margin: 0 0 0 auto;
+          padding-top: #{'min(40px, 1rem)'};
+          width: calc(100% / 5 * 1.2);
+          border-bottom: 1px solid #fff;
+          text-align: center;
+        }
+      }
+      .btns{
+        position: absolute;
+        bottom: 0;
+        right: -5.8%;
+        height: #{'min(120px, 3rem)'};
+        width: calc(100% / 12 * 0.7);
+        .btn{
+          width: 100%;
+          border: 2px solid #929ca6;
+          height: inherit;
+          i{
+            width: 100%;
+            text-align: center;
+            height: 50%;
+            outline: 1px solid #929ca6;
+            font-size: #{'min(30px, 3em)'};
+            line-height: #{'min(60px, 6em)'};
+            cursor: pointer;
+            color: #929ca6;
+          }
+        }
+
+      }
+    }
+
+    // cnt02
+    &.cnt02{
+      header{
+        display: none;
+      }
+      section{
+        article{
+          position: relative;
+          height: #{'min(1000px, 25rem)'};
+
+          .left01{
+            width: calc(100% / 12 * 7);
+            height: inherit;
+            position: absolute;
+            top: 0; left: 0;
+            .texts{
+              height: #{'min(600px, 15rem)'};
+              padding-right: calc(100% / 7 * 3);
+              position: relative;
+              p{
+                margin-top: #{'min(40px, 1rem)'};
+              }
+              .num{
+                font-size: #{'min(18px, 1.8em)'};
+                font-family: 'PatuaOne-Regular';
+                line-height: #{'min(30px, 3em)'};
+                color: #929ca6;
+                width: calc(100% / 7 * 2);
+                position: absolute;
+                bottom: 0; left: 10px;
+              }
+            }
+            .btns{
+              position: absolute;
+              bottom: 0; right: 0;
+              .btn{
+                background-color: #000;
+                height: #{'min(120px, 3rem)'};
+                i{
+                  width: 100%;
+                  text-align: center;
+                  height: 50%;
+                  outline: 1px solid #929ca6;
+                  font-size: #{'min(30px, 3em)'};
+                  line-height: #{'min(60px, 6em)'};
+                  cursor: pointer;
+                  color: #929ca6;
+                }
+              }
+            }
+            .view{
+              width: 100%;
+              height: #{'min(400px, 10rem)'};
+              overflow: hidden;
+              .images{
+                width: 100%;
+                height: 300%;
+                .image{
+                  width: 100%;
+                  height: calc(100% / 3);
+                  @for $img from 1 through 3 {  
+                    &.i#{$img}{
+                        background-image: url('./images/02SUB_2/02.\ sub02_cnt02_left_0#{$img}.jpg');
+                    }
+                }
+                }
+              }
+            }
+          }
+          .right{
+            width: calc(100% / 12 * 5);
+            position: absolute;
+            top: 0; right: 0;
+            height: #{'min(920px, 23rem)'};
+
+            .ovrGrid{
+              width: calc((100vw - 1080px) / 2 + 100%);
+              min-width: calc((100vw - 80vw) / 2 + 100%);
+              height: inherit;
+              background-color: #ccc;
+              overflow: hidden;
+              .images{
+                width: 100%;
+                height: 100%;
+                .image{
+                  width: 100%;
+                  height: inherit;
+                  background-image: url('./images/02SUB_2/02.\ sub02_cnt02_01.jpg');
+                }
+              }
+            }
+            .btn{
+              height: #{'min(80px, 2rem)'};
+              background-color: #000;
+              color: #fff;
+              width: calc(100% / 5 * 2);
+              line-height: #{'min(80px, 2rem)'};
+              text-align: center;
+              font-size: $btnFz;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    &.cnt03{
+      margin-top: #{'min(-80px, -2rem)'};
+      header{
+        display: none;
+      }
+      section{
+        article{
+          height: #{'min(800px, 20rem)'};
+          position: relative;
+          .texts{
+            display: flex;
+            justify-content: space-between;
+            .left{
+              width: calc(100% / 12 * 6);
+              margin-top: #{'min(120px, 3rem)'};
+            }
+            .right{
+              width: calc(100% / 12 * 6);
+              margin-top: #{'min(200px, 5rem)'};
+              padding-right: calc(100% / 6 * 0.3);
+            }
+          }
+          .imageLeft{
+            width: 100%;
+            height: #{'min(360px, 9rem)'};
+            position: absolute;
+            bottom: 0; left: 0;
+            direction: rtl;
+            .ovrGrid{
+              background-position: right;
+              width: calc((100vw - 1080px) / 2 + 100%);
+              min-width: calc((100vw - 80vw) / 2 + 100%);
+              background-color: #ccc;
+              height: inherit;
+              display: flex;
+              justify-content: space-between;
+              .image{
+                width: calc(100% / 3);
+                height: inherit;
+                background-color: #ccc;
+                @for $img from 1 through 3 {  
+                  &.i#{$img}{
+                      background-image: url('./images/02SUB_2/02.\ sub02_cnt03_0#{$img}.jpg');
+                  }
+              }
+              }
+            }
+          }
+          .imageRight{
+            height: inherit;
+            position: absolute;
+            top: 0; right: 0;
+            z-index: -99999;
+            .ovrGrid{
+              width: calc((100vw - 1080px) / 2 + 100%);
+              min-width: calc((100vw - 80vw) / 2 + 100%);
+              background-color: pink;
+              height: inherit;
+              .image{
+                background-image: url('./images/02SUB_2/lasgovg.jpg');
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+// footer
+.ftrWrap{
+  background-color: #efefef;
+  margin-top: #{'min(80px, 2rem)'};
+  footer{
+      @include grid();
+      color: #1d1d1d;
+      font-size: #{'min(15px, 1.5em)'};
+      display: flex;
+      justify-content: space-between;
+      padding-top: #{'min(80px, 2rem)'};
+      padding-bottom: #{'min(80px, 2rem)'};
+      ul{
+          width: calc(100% / 4);
+          &:nth-child(1){
+              li{
+                  &:nth-child(1){
+                      line-height: #{'min(40px, 1rem)'};
+                  }
+                  &:nth-child(2){
+                      line-height: #{'min(40px, 1rem)'};
+                  }
+                  &:nth-child(3){
+                      line-height: #{'min(80px, 2rem)'};
+                  }
+                  &:nth-child(4){
+                      line-height: #{'min(20px, 2em)'};
+                  }
+              }
+          }
+          
+          &:nth-child(n+2){
+              li{
+                  &:nth-child(1){
+                      margin-top: #{'min(40px, 1rem)'};
+                      line-height: #{'min(40px, 1rem)'};
+                  }
+                  &:nth-child(2){
+                      line-height: #{'min(80px, 2rem)'};
+                  }
+                  &:nth-child(3){
+                      line-height: #{'min(20px, 2em)'};
+                  }
+              }
+          }
+
+          &:nth-child(3){
+              li{
+                  &:nth-child(3){
+                      font-size: #{'min(15px, 1.5em)'};
+                      font-weight: 700;
+                      span{
+                          cursor: pointer;
+                          margin: 0 10px;
+                          font-weight: 700;
+                          font-size: #{'min(15px, 1.5em)'};
+                          a{
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                          }
+                      }
+                  }
+              }
+          }
+          &:nth-child(4){
+              text-align: right;
+              li{
+                  &:nth-child(1){
+                      background-color: #000;
+                      color: #fff;
+                      text-align: center;
+                      cursor: pointer;
+                  }
+              }
+          }
+      }
+  }
+}

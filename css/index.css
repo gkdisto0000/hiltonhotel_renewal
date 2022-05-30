@@ -1,0 +1,334 @@
+html {
+  font-size: 3vw;
+}
+
+html body {
+  font-size: 0.7vw;
+}
+
+/* html 3vw = 1rem = 40px, body 0.7vw = 1em = 10px*/
+.mnTopWrap .mnTop {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  line-height: min(80px, 2rem);
+  color: #929ca6;
+  font-weight: 700;
+}
+
+.mnTopWrap .mnTop h1 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: calc(100% / 12 * 2);
+  height: min(40px, 1rem);
+  background-image: url("./images/00main/00logo.JPG");
+  background-size: contain;
+  margin-top: min(20px, 2em);
+  cursor: pointer;
+}
+
+.mnTopWrap .mnTop .mnMiddle :nth-child(2) {
+  margin-right: min(30px, 3em);
+}
+
+.mnTopWrap .mnTop .mnLeft nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mnTopWrap .mnTop .mnLeft nav div {
+  margin-left: min(30px, 3.0em);
+  cursor: pointer;
+}
+
+.mainWrap main {
+  position: relative;
+  height: min(680px, 17rem);
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.mainWrap main .texts {
+  width: calc(100% / 12 * 5.5);
+  position: relative;
+  z-index: 999999;
+  padding-top: min(160px, 4rem);
+}
+
+.mainWrap main .texts h4 {
+  font-size: min(12px, 1.2em);
+  line-height: min(40px, 1rem);
+}
+
+.mainWrap main .texts h2 {
+  font-size: min(50px, 5.0em);
+  font-weight: 700;
+  margin-top: min(20px, 2.0em);
+}
+
+.mainWrap main .texts p {
+  font-size: min(17px, 1.7em);
+  line-height: min(30px, 3em);
+  margin-top: min(20px, 2.0em);
+}
+
+.mainWrap main .texts .btn {
+  font-size: min(15px, 1.5em);
+  line-height: min(40px, 1rem);
+}
+
+.mainWrap main .mainLeft {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% / 12 * 9);
+}
+
+.mainWrap main .mainLeft .ovrGrid {
+  width: calc((100vw - 1080px) / 2 + 100%);
+  min-width: calc((100vw - 80vw) / 2 + 100%);
+  height: min(680px, 17rem);
+  overflow: hidden;
+}
+
+.mainWrap main .mainLeft .ovrGrid .images {
+  width: 300%;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.mainWrap main .mainLeft .ovrGrid .images :nth-child(1) {
+  background-color: #ccc;
+}
+
+.mainWrap main .mainLeft .ovrGrid .images :nth-child(2) {
+  background-color: orangered;
+}
+
+.mainWrap main .mainLeft .ovrGrid .images :nth-child(3) {
+  background-color: yellow;
+}
+
+.mainWrap main .mainLeft .ovrGrid .images .image {
+  width: calc(100% / 3);
+  height: inherit;
+}
+
+.mainWrap main .mainLeft .btns {
+  width: calc(100% / 9 * 2);
+  height: min(40px, 1rem);
+  z-index: 999999;
+  text-align: center;
+  line-height: min(40px, 1rem);
+  font-weight: 700;
+  background-color: #fff;
+  position: absolute;
+  color: #757575;
+  bottom: 0;
+}
+
+.bnrWrap.bnrWrap01 {
+  background-color: #f2f2f2;
+}
+
+.bnrWrap.bnrWrap01 .banner.bnr01 {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.bnrWrap.bnrWrap01 .banner.bnr01 .image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("./images/00main/banner01.png");
+  height: min(200px, 5rem);
+}
+
+.bnrWrap.bnrWrap01 .banner.bnr01 .texts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.bnrWrap.bnrWrap01 .banner.bnr01 .texts .btn {
+  width: calc(100% / 4);
+  text-align: center;
+  margin-top: min(60px, 6em);
+  color: #5d5d5d;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.bnrWrap.bnrWrap01 .banner.bnr01 .texts .btn h5 {
+  font-size: min(12px, 1.2em);
+  line-height: min(20px, 2em);
+}
+
+.bnrWrap.bnrWrap01 .banner.bnr01 .texts .btn h3 {
+  font-size: min(20px, 2em);
+  line-height: min(40px, 4em);
+  font-weight: 700;
+}
+
+.bnrWrap.bnrWrap01 .banner.bnr01 .texts .btn h3::after {
+  margin: 0 auto;
+  display: block;
+  content: '';
+  width: 60%;
+  height: 2px;
+  background-color: #ccc;
+}
+
+.bnrWrap.bnrWrap01 .banner.bnr01 .texts .btn:nth-last-child(1) div {
+  color: #fff;
+  background-color: #131313;
+  height: min(80px, 2rem);
+  font-size: min(20px, 2em);
+  line-height: min(80px, 2rem);
+  width: 70%;
+  margin: 0 auto;
+}
+
+.bnrWrap.bnrWrap01 .banner.bnr01 .texts .btn:nth-child(-n+3):hover {
+  background-color: #333333;
+  color: #fff;
+}
+
+.cntWrap .content {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.cntWrap .content.cnt01 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  direction: rtl;
+}
+
+.cntWrap .content.cnt01 header {
+  margin-left: min(40px, 1rem);
+  width: calc(100% / 12 * 5);
+  direction: ltr;
+}
+
+.cntWrap .content.cnt01 header h5 {
+  font-size: min(12px, 1.2em);
+  line-height: min(40px, 1rem);
+}
+
+.cntWrap .content.cnt01 header h3 {
+  font-size: min(30px, 3em);
+  line-height: min(40px, 1rem);
+}
+
+.cntWrap .content.cnt01 header p {
+  font-size: min(17px, 1.7em);
+  line-height: min(30px, 3em);
+}
+
+.cntWrap .content.cnt01 header .sign {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("./images/00main/sign.png");
+  height: min(80px, 2rem);
+  width: calc(100% / 2);
+}
+
+.cntWrap .content.cnt01 header .btn {
+  font-size: min(15px, 1.5em);
+  line-height: min(40px, 1rem);
+  cursor: pointer;
+  border-bottom: 1px solid #929ca6;
+  width: calc(100% / 3.5);
+}
+
+.cntWrap .content.cnt01 section {
+  width: calc(100% / 12 * 7);
+}
+
+.cntWrap .content.cnt01 section .images {
+  direction: ltr;
+}
+
+.cntWrap .content.cnt01 section .images .image.i1 {
+  width: calc(100% / 7 * 5);
+  height: min(280px, 7rem);
+  background-color: #ccc;
+}
+
+.cntWrap .content.cnt01 section .images .image.i2 {
+  margin: 0 0 0 auto;
+  width: calc(100% / 7 * 4);
+  height: min(280px, 7rem);
+  background-color: #ccc;
+}
+
+.cntWrap .content.cnt02 header {
+  width: calc(100% / 12 * 3);
+  background-color: #131313;
+  height: min(440px, 11rem);
+  padding-bottom: min(40px, 1rem);
+  padding-top: min(40px, 1rem);
+  padding-left: min(30px, 3em);
+}
+
+.cntWrap .content.cnt02 header h5 {
+  color: #929ca6;
+  font-size: min(12px, 1.2em);
+  line-height: min(12px, 1.2em);
+}
+
+.cntWrap .content.cnt02 header h3 {
+  color: #fff;
+  font-size: min(28px, 2.8em);
+  margin-top: min(20px, 2em);
+}
+
+.cntWrap .content.cnt02 header p {
+  color: #929ca6;
+  font-size: min(17px, 1.7em);
+  line-height: min(30px, 3em);
+}
+
+.cntWrap .content.cnt02 header .btn {
+  font-size: min(15px, 1.5em);
+  line-height: min(40px, 1rem);
+  color: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid #929ca6;
+  width: calc(100% / 2.5);
+}
+/*# sourceMappingURL=index.css.map */

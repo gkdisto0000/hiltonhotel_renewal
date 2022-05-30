@@ -1,0 +1,879 @@
+// 반응형 기준 (본 페이지는 적응형 웹)
+html {
+  font-size: 3vw;
+
+  body {
+    font-size: 0.7vw;
+  }
+}
+
+// mixin 사용
+@mixin grid {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+@mixin image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 불필요한 스크롤 삭제 */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+// 공통 폰트 영역
+/* html 3vw = 1rem = 40px, body 0.7vw = 1em = 10px*/
+
+// mnTop
+$mnTopMid : #{'min(12px, 1.2em)'};
+$mnTopNav : #{'min(15px, 1.5em)'};
+$mnTopLh : #{'min(80px, 2rem)'};
+
+// font-size
+$h4Fz : #{'min(18px, 1.8em)'};
+$h4Lh : #{'min(40px, 1rem)'};
+$pFz : #{'min(15px, 1.5em)'};
+$pLh : #{'min(30px, 3em)'};
+$btnFz : #{'min(15px, 1.5em)'};
+$btnLh : #{'min(40px, 1rem)'};
+$h3Fz : #{'min(30px, 3em)'};
+$h3Lh : #{'min(40px, 1rem)'};
+$h5Fz : #{'min(15px, 1.5em)'};
+$h5Lh : #{'min(20px, 2em)'};
+
+
+// font-family
+@mixin ff($fontname, $url) {
+  @font-face {
+    font-family: '#{$fontname}';
+    src: url('./fonts/#{$url}') format('truetype');
+  }
+}
+
+@include ff(PTSerif-Regular, 'PTSerif-Regular.ttf');
+@include ff(PatuaOne-Regular, 'PatuaOne-Regular.ttf');
+@include ff(AlegreyaSans-Regular, 'AlegreyaSans-Regular.ttf');
+
+// mnTop
+.mnTopWrap {
+  .mnTop {
+    @include grid();
+    display: flex;
+    justify-content: space-between;
+    line-height: $mnTopLh;
+    color: #929ca6;
+    font-weight: 700;
+
+    h1 {
+      @include image();
+      width: calc(100% / 12 * 2);
+      height: #{'min(40px, 1rem)'};
+      background-image: url('./images/00main/00logo.JPG');
+      background-size: contain;
+      margin-top: #{'min(20px, 2em)'};
+      cursor: pointer;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .mnMiddle {
+
+      :nth-child(2) {
+        margin-right: #{'min(30px, 3em)'};
+      }
+    }
+
+    .mnLeft {
+      nav {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+          margin-left: #{'min(30px, 3.0em)'};
+          cursor: pointer;
+
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// main
+.mainWrap {
+  main {
+    @include grid();
+    position: relative;
+    height: #{'min(680px, 17rem)'};
+
+    .textLeft {
+      width: calc(100% / 12 * 5);
+      padding-right: 20px;
+      position: relative;
+      z-index: 999999;
+      padding-top: #{'min(300px, 30em)'};
+
+      .texts {
+        text-align: right;
+        z-index: 999;
+        color: #fff;
+
+        h4 {
+          font-size: $h4Fz;
+          line-height: $h4Lh;
+          padding-top: #{'min(40px, 1rem)'};
+        }
+
+        h2 {
+          font-size: #{'min(50px, 5.0em)'};
+          font-family: 'PTSerif-Regular';
+          text-align: right;
+          color: #000;
+        }
+      }
+    }
+
+    .images {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: #{'min(680px, 17rem)'};
+      width: 100%;
+
+      .ovrGrid {
+        position: relative;
+        width: calc((100vw - 1080px) / 2 + 100%);
+        min-width: calc((100vw - 80vw) / 2 + 100%);
+        height: inherit;
+        background-color: #ccc;
+
+        .image {
+          width: 100%;
+          height: 100%;
+          @include image();
+          background-image: url('./images/03sub_3/01sub03_main_03.jpg');
+        }
+
+        .textRight {
+          position: absolute;
+          height: inherit;
+          top: 0;
+          right: 0;
+          color: #fff;
+          width: calc((100vw - 1080px) / 2);
+
+          .dim {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #000;
+            opacity: 0.5;
+            height: inherit;
+            width: inherit;
+            z-index: 0;
+          }
+
+          .texts {
+            padding-left: 20px;
+            padding-right: 20px;
+            position: relative;
+            padding-top: #{'min(200px, 5rem)'};
+
+            h5 {
+              font-size: #{'min(16px, 1.6em)'};
+              border-bottom: 1px solid #ccc;
+              width: calc(100% / 8);
+
+              &:nth-child(n+2) {
+                padding-top: #{'min(10px, 1em)'};
+              }
+            }
+
+            h3 {
+              font-size: #{'min(13px, 1.3em)'};
+              line-height: #{'min(20px, 2em)'};
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+// content
+.cntWrap {
+  .content {
+    @include grid();
+
+    // cnt 공통영역
+    .image {
+      @include image();
+    }
+
+    h4 {
+      font-size: $h4Fz;
+      line-height: $h4Lh;
+    }
+
+    h5 {
+      font-size: $h4Fz;
+      line-height: $h4Lh;
+      padding-top: #{'min(40px, 1rem)'};
+    }
+
+    h2 {
+      font-size: #{'min(50px, 5.0em)'};
+      font-weight: 700;
+      font-family: 'PTSerif-Regular';
+    }
+
+    h3 {
+      font-size: $h3Fz;
+      line-height: $h3Lh;
+      font-weight: 500;
+      font-family: 'PTSerif-Regular';
+      text-shadow: 1px 1px 2px #929ca6;
+    }
+
+    p {
+      font-size: $pFz;
+      line-height: $pLh;
+    }
+
+    &.cnt01 {
+      margin-top: #{'min(80px, 2rem)'};
+      display: flex;
+      justify-content: space-between;
+
+      header {
+        width: calc(100% / 12 * 5);
+        padding-right: calc(100% / 12);
+        padding-left: calc(100% / 12*0.5);
+
+        p {
+          margin-top: #{'min(40px, 1rem)'};
+        }
+
+        .btn {
+          font-size: $btnFz;
+          line-height: $btnLh;
+          cursor: pointer;
+          border-bottom: 1px solid #929ca6;
+          width: calc(100% / 5 * 1.5);
+          text-align: center;
+        }
+      }
+
+      section {
+        width: calc(100% / 12 * 7);
+
+        article {
+          .texts {
+            display: none;
+          }
+
+          .image {
+            height: #{'min(360px, 9rem)'};
+
+            .ovrGrid {
+              width: calc((100vw - 1080px) / 2 + 100%);
+              min-width: calc((100vw - 80vw) / 2 + 100%);
+              height: inherit;
+              @include image();
+              background-image: url('./images/03sub_3/01sub03_cnt_01.jpg');
+            }
+          }
+        }
+      }
+    }
+
+    // cnt02
+    &.cnt02 {
+      position: relative;
+      margin-top: #{'min(80px, 2rem)'};
+      width: 100%;
+      height: #{'min(1560px, 39rem)'};
+      header {
+        position: relative;
+        width: 100%;
+        height: inherit;
+        .texts {
+          position: absolute;
+          top: 0;
+          left: calc(100% / 12 * 2);
+          z-index: 99999;
+
+          h3 {
+            padding-top: #{'min(80px, 2rem)'};
+          }
+          .pGroup {
+            padding-top: #{'min(80px, 2rem)'};
+            width: calc(100% / 12 * 9);
+            display: flex;
+            justify-content: space-between;
+            :nth-child(2){
+              font-size:  #{'min(15px, 1.5em)'};
+              font-family: 'PTSerif-Regular';
+            }
+
+            p {
+              width: calc(100% / 2 - 40px);
+              margin: 0 20px;
+            }
+          }
+        }
+
+        .square {
+          width: calc(100% / 12 * 6);
+          height: #{'min(760px, 19rem)'};
+          position: absolute;
+          top: 0;
+          left: calc(100% / 12 * 3);
+          background-image: url('./images/03sub_3/01sub03_cnt_03_01.jpg');
+
+        }
+      }
+      section {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        article {
+          .texts{
+            text-align: center;
+            h4{
+              font-family: 'PTSerif-Regular';
+            }
+          }
+          .slide {
+            width: calc(300% + 2%);
+            height: #{'min(680px, 17rem)'};
+            display: flex;
+            justify-content: space-between;
+            margin-left: -100%;
+
+            .images {
+              position: relative;
+              height: inherit;
+              width: calc(100% / 3);
+              overflow: hidden;
+              &:nth-child(2) {
+                background-color: #ccc;
+                margin-left: 1%;
+              }
+
+              &:nth-child(3) {
+                background-color: #000;
+                margin-left: 1%;
+              }
+
+              .btns1 {
+                position: absolute;
+                top: 45%;
+                right: 0;
+                width: calc(100% / 12);
+
+                .leftBtn {
+                  .btn {
+                    width: 100%;
+                    height: #{'min(40px, 1rem)'};
+                    background-color: #fff;
+                    color: #000;
+                    text-align: center;
+                    font-size: $btnFz;
+                    line-height: $btnLh;
+
+                    i {
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+
+              .btns2 {
+                position: absolute;
+                top: 45%;
+                left: 0;
+                width: calc(100% / 12);
+
+                .rightBtn {
+                  .btn {
+                    width: 100%;
+                    height: #{'min(40px, 1rem)'};
+                    background-color: #fff;
+                    color: #000;
+                    text-align: center;
+                    font-size: $btnFz;
+                    line-height: $btnLh;
+                  }
+                }
+              }
+              .artGroup {
+                width: 300%;
+                height: inherit;
+                display: flex;
+                justify-content: space-between;
+
+                .image {
+                  width: calc(100% / 3);
+                  height: inherit;
+                  @for $img from 1 through 3 {
+                    &.i#{$img} {
+                      background-image: url('./images/03sub_3/01sub03_cnt_02_0#{$img}.jpg');
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // cnt03
+    &.cnt03 {
+      section{
+        article.a1{
+          position: relative;
+          width: 100%;
+          height: #{'min(680px, 17rem)'};
+          .texts{
+            background-color: #333;
+            @include image();
+            background-image: url('./images/03sub_3/01sub03_cnt_03_bg.jpg');
+            color: #fff;
+            height: #{'min(680px, 17rem)'};
+            width: calc(100% / 12 * 11);
+            margin: 0 0 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding-left: calc(100% / 11);
+            padding-right: calc(100% / 11);
+            padding-top: #{'min(80px, 2rem)'};
+            h3{
+              font-size: #{'min(70px, 7em)'};
+              line-height: #{'min(80px, 2rem)'};
+              width: calc(100% / 11 * 4);
+            }
+            p{
+              width: calc(100% / 11 * 6);
+            }
+          }
+          .images{
+            position: absolute;
+            bottom: 0; right: 0;
+            width: calc(100% / 12 * 11);
+            padding-left: calc(100% / 11);
+            padding-right: calc(100% / 11);
+            padding-bottom: #{'min(80px, 2rem)'};
+            .icons{
+              display: flex;
+              justify-content: space-between;
+              color: #fff;
+              .iG{
+                width: calc(100% / 3);
+                .iGroup{
+                  height: #{'min(80px, 1rem)'};
+                  width: 100%;
+                  display: flex;
+                  justify-content: space-between;
+                  margin-top: #{'min(40px, 1rem)'};
+                  .image{
+                    width: 40%;
+                    height: inherit;
+                    background-size: contain;
+                    @for $img from 1 through 9 {  
+                      &.i#{$img}{
+                          background-image: url('./images/03sub_3/pic0#{$img}.png');
+                      }
+                  }
+                  }
+                  h4{
+                    width: 60%;
+                    line-height: #{'min(20px, 2em)'};
+                  }
+                }
+              }
+            }
+          }
+        }
+        article.a2{
+          display: flex;
+          justify-content: space-between;
+
+          .image{
+            width: calc(100% / 12 * 7);
+            background-color: #ccc;
+            height: #{'min(880px, 22rem)'};
+            background-image: url('./images/03sub_3/01sub03_cnt_03_slide_01.jpg');
+          }
+          .texts{
+            width: calc(100% / 12 * 6);
+            margin-left: calc(100% / 6 * 0.5);
+            padding-top: #{'min(200px, 5rem)'};
+            h4{
+              font-size: #{'min(35px, 3.5em)'};
+              line-height:  #{'min(80px, 2rem)'};
+            }
+            h3{
+              font-size: #{'min(60px, 6em)'};
+              line-height: #{'min(80px, 2rem)'};
+              margin-top: #{'min(40px, 1rem)'};
+            }
+            p{
+              margin-top: #{'min(40px, 1rem)'};
+            }
+          }
+        }
+      }
+    }
+    &.cnt04{
+      header{
+        text-align: center;
+        h3{
+          margin-top: #{'min(40px, 1rem)'};
+          font-size: #{'min(60px, 6em)'};
+          line-height: #{'min(60px, 6em)'};
+        }
+        .pGroup{
+          width: calc(100% / 12 * 10);
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          :nth-child(1){
+            text-align: right;
+          }
+          :nth-child(2){
+            text-align: left;
+          }
+          p{
+            width: calc(100% / 2 - 20px);
+            margin-top: #{'min(80px, 2rem)'};
+        }
+        }
+      }
+      section{
+        margin-top: #{'min(40px, 1rem)'};
+        display: flex;
+        justify-content: space-between;
+        height: #{'min(440px, 11rem)'};
+        article{
+          width: calc(100% / 3 - 20px);
+          position: relative;
+          height: #{'min(360px, 9rem)'};
+          .image{
+            width: 100%;
+            background-color: #ccc;
+            height: #{'min(360px, 9rem)'};
+            @for $img from 1 through 3 {
+              &.i#{$img} {
+                background-image: url('./images/03sub_3/01sub03_cnt_04_0#{$img}.jpg');
+              }
+            }
+          }
+          .texts{
+            background-color: #fff;
+            opacity: 0.7;
+            width: 90%;
+            text-align: center;
+            position: absolute;
+            bottom: 20px; left: 50%;
+            transform: translate(-50%, 0%);
+          }
+        }
+        .btn{
+          text-align: center;
+          background-color: #252525;
+          width: 60%;
+          color: #fff;
+          font-size: $btnFz;
+          line-height: #{'min(40px, 4em)'};
+          height: #{'min(40px, 4em)'};
+          margin: 0 auto;
+          margin-top: #{'min(20px, 2em)'};
+          cursor: pointer;
+        }
+      }
+
+    }
+    &.cnt05{
+      margin-top: #{'min(80px, 2rem)'};
+      position: relative;
+      height: #{'min(880px, 22rem)'};
+      header{
+        position: absolute;
+        width: 100%;
+        .texts{
+          display: flex;
+          justify-content: space-between;
+          background-color: #333;
+          @include image();
+          background-image: url('./images/03sub_3/01sub03_cnt_05_01.jpg');
+          width: calc(100% / 12 * 11);
+          .txtLeft{
+            height: #{'min(680px, 17rem)'};
+            margin-right: calc(100% / 12);
+            color: #fff;
+            padding-left: calc(100% / 11);
+            h3{
+              font-size: #{'min(70px, 7em)'};
+              line-height: #{'min(80px, 2rem)'};
+              width: calc(100% / 11 * 4);
+            }
+            p{
+              width: calc(100% / 11 * 6);
+            }
+          }
+          .txtRight{
+            width: calc(100% / 11 * 5);
+            color: #fff;
+            padding-top: #{'min(120px, 3rem)'};
+            padding-right: calc(100% / 5 * 0.3);
+          }
+          :nth-child(4){
+            padding-top: #{'min(80px, 2rem)'};
+          }
+          ul{
+            padding-top: #{'min(40px, 1rem)'};
+            :nth-child(1){
+              font-size: #{'min(30px, 3em)'};
+              line-height: #{'min(40px, 1rem)'};
+            }
+            :nth-child(2){
+              font-size: #{'min(18px, 1.8em)'};
+              line-height: #{'min(20px, 0.5rem)'};
+            }
+            li{
+              cursor: pointer;
+              font-family: 'PTSerif-Regular';
+            }
+          }
+        }
+      }
+      section{
+        position: absolute;
+        bottom: 0; right: 0;          
+        height: #{'min(560px, 14rem)'};
+  
+        width: calc(100% / 12 * 6);
+        article{
+          width: 100%;
+          height: 100%;
+          .texts{
+            display: none;
+          }
+          .view{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            box-shadow: 5px 5px 5px rgb(119, 119, 119);
+            .maps{
+              display: flex;
+              justify-content: space-between;
+              width: 300%;
+              height: inherit;
+              .map{
+                width: calc(100% / 3);
+                height: inherit;
+                background-color: #ccc;
+              }
+            }
+          }
+
+        }
+      }
+    }
+    &.cnt06{
+      section{
+        position: relative;
+        height: #{'min(400px, 10rem)'};
+        .view{
+          width: 100%;
+          overflow: hidden;
+          .artGroup{
+            width: 300%;
+            display: flex;
+            justify-content: space-between;
+            article{
+              margin-top: #{'min(80px, 2rem)'};
+              width: calc(100% / 3);
+              .texts{
+                p{
+                  font-size: #{'min(18px, 1.8em)'};
+                  line-height: #{'min(20px, 0.5rem)'};
+                  width: calc(100% / 12 * 10);
+                  padding-right: calc(100% / 12);
+                  margin: 0 0 0 auto;
+                  margin-top: #{'min(40px, 1rem)'};
+                }
+              }
+              .images{
+                padding-top: #{'min(40px, 1rem)'};
+                display: flex;
+                justify-content: space-between;
+                width: calc(100% / 12 * 3);
+                .profile{
+                  width: calc(100% / 3 * 1.4);
+                  border-radius: 50%;
+                  height: #{'min(120px, 3rem)'};
+                  @include image();
+                  @for $img from 1 through 3 {
+                    &.i#{$img} {
+                      background-image: url('./images/03sub_3/01sub06_profile0#{$img}.jpg');
+                    }
+                  }
+                }
+                .userId{
+                  font-size: #{'min(18px, 1.8em)'};
+                  line-height: #{'min(40px, 1rem)'};
+                  padding-top: #{'min(20px, 0.5rem)'};
+                }
+              }
+            }
+          }
+        }
+        .btns{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          position: absolute;
+          // margin-top: #{'min(-200px, -10rem)'};
+          padding-top: -200px;
+          left: 0;
+          bottom: #{'min(200px, 10em)'};
+          z-index: 99999;
+          font-size: #{'min(30px, 3em)'};
+          color: #929ca6;
+          i{
+            cursor: pointer;
+          }
+        }
+
+        .index{
+          ul{
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% / 12 * 0.5);
+            margin: 0 auto;
+            li{
+              width: 7px;
+              height: 7px;
+              outline: 2px solid #333;
+              border-radius: 50%;
+            }
+            .show{
+              background-color: #333;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// footer
+.ftrWrap {
+  background-color: #efefef;
+  margin-top: #{'min(80px, 2rem)'};
+
+  footer {
+    @include grid();
+    color: #1d1d1d;
+    font-size: #{'min(15px, 1.5em)'};
+    display: flex;
+    justify-content: space-between;
+    padding-top: #{'min(80px, 2rem)'};
+    padding-bottom: #{'min(80px, 2rem)'};
+
+    ul {
+      width: calc(100% / 4);
+
+      &:nth-child(1) {
+        li {
+          &:nth-child(1) {
+            line-height: #{'min(40px, 1rem)'};
+          }
+
+          &:nth-child(2) {
+            line-height: #{'min(40px, 1rem)'};
+          }
+
+          &:nth-child(3) {
+            line-height: #{'min(80px, 2rem)'};
+          }
+
+          &:nth-child(4) {
+            line-height: #{'min(20px, 2em)'};
+          }
+        }
+      }
+
+      &:nth-child(n+2) {
+        li {
+          &:nth-child(1) {
+            margin-top: #{'min(40px, 1rem)'};
+            line-height: #{'min(40px, 1rem)'};
+          }
+
+          &:nth-child(2) {
+            line-height: #{'min(80px, 2rem)'};
+          }
+
+          &:nth-child(3) {
+            line-height: #{'min(20px, 2em)'};
+          }
+        }
+      }
+
+      &:nth-child(3) {
+        li {
+          &:nth-child(3) {
+            font-size: #{'min(15px, 1.5em)'};
+            font-weight: 700;
+
+            span {
+              cursor: pointer;
+              margin: 0 10px;
+              font-weight: 700;
+              font-size: #{'min(15px, 1.5em)'};
+
+              a {
+                width: 100%;
+                height: 100%;
+                display: block;
+              }
+            }
+          }
+        }
+      }
+
+      &:nth-child(4) {
+        text-align: right;
+
+        li {
+          &:nth-child(1) {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
