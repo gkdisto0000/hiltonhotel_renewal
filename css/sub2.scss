@@ -252,7 +252,7 @@ $h3Lh : #{'min(40px, 1rem)'};
               height: calc(100% / 3);
               @for $img from 1 through 3 {  
                 &.i#{$img}{
-                    background-image: url('./images/02sub_2/02.\ sub02_cnt01_01_#{$img}.jpg');
+                    background-image: url('./images/02SUB_2/02.\ sub02_cnt01_01_#{$img}.jpg');
                 }
             }
             }
