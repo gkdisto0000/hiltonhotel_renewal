@@ -56,57 +56,66 @@ $h3Lh : #{'min(40px, 1rem)'};
 @include ff(PatuaOne-Regular, 'PatuaOne-Regular.ttf');
 @include ff(AlegreyaSans-Regular, 'AlegreyaSans-Regular.ttf');
 
+// css start
+body{
+  position: relative;
+}
 // mnTop
 .mnTopWrap{
-  .mnTop{
-      @include grid();
-      display: flex;
-      justify-content: space-between;
-      line-height: $mnTopLh;
-      color: #929ca6;
-      font-weight: 700;
-      h1{
-          @include image();
-          width: calc(100% / 12 * 2);
-          height: #{'min(40px, 1rem)'};
-          background-image: url('./images/00main/00logo.JPG');
-          background-size: contain;
-          margin-top: #{'min(20px, 2em)'};
-          cursor: pointer;
-          a{
-            display: block;
-            width: 100%;
-            height: 100%;
-          }
-      }
-      .mnMiddle{
-          
-          :nth-child(2){
-              margin-right: #{'min(30px, 3em)'};
-          }
-      }
-      .mnLeft{
-          nav{
-              display: flex;
-              justify-content: space-between;
-              div{
-                  margin-left: #{'min(30px, 3.0em)'};
-                  cursor: pointer;
-                  a{
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                  }
-              }
-          }
-      }
-  }
+  position: fixed;
+  width: 100vw;
+  top: 0; left: 0;
+  z-index: 99999999;
+  background-color: #fff;
+    .mnTop{
+        @include grid();
+        display: flex;
+        justify-content: space-between;
+        line-height: $mnTopLh;
+        color: #929ca6;
+        font-weight: 700;
+        h1{
+            @include image();
+            width: calc(100% / 12 * 2);
+            height: #{'min(40px, 1rem)'};
+            background-image: url('./images/00main/00logo.JPG');
+            background-size: contain;
+            margin-top: #{'min(20px, 2em)'};
+            cursor: pointer;
+            a{
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+        }
+        .mnMiddle{
+            
+            :nth-child(2){
+                margin-right: #{'min(30px, 3em)'};
+            }
+        }
+        .mnLeft{
+            nav{
+                display: flex;
+                justify-content: space-between;
+                div{
+                    margin-left: #{'min(30px, 3.0em)'};
+                    cursor: pointer;
+                    a{
+                      display: block;
+                      width: 100%;
+                      height: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
-
 
 
 // main
 .mainWrap{
+  margin-top: #{'min(80px, 2rem)'};
   main{
     height:  #{'min(320px, 8rem)'};
     position: relative;
@@ -139,7 +148,7 @@ $h3Lh : #{'min(40px, 1rem)'};
           width: 100%;
           height: 100%;
           @include image();
-          background-image: url('./images/02sub_2/01.\ sub02_main_01.jpg');
+          background-image: url('./images/01sub_1/01.\ main.jpg');
         }
       }
     }
@@ -467,11 +476,26 @@ $h3Lh : #{'min(40px, 1rem)'};
                       background-color: #000;
                       color: #fff;
                       text-align: center;
-                      min-width: 125px;
                       cursor: pointer;
                   }
               }
           }
       }
   }
+}
+
+.Top{
+  position: fixed;
+  cursor: pointer;
+  right: 1em;
+  bottom: 2em;
+  color: #fff;
+  font-size: 0.3rem;
+  line-height: 0.3rem;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  background: linear-gradient(180deg, #1a1a1a 0%, #446382 50%, #788bcb 100%);
+  z-index: 9999;
+  transition: all 0.5s;
 }

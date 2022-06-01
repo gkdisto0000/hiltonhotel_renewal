@@ -57,12 +57,17 @@ $h3Lh : #{'min(40px, 1rem)'};
 @include ff(PatuaOne-Regular, 'PatuaOne-Regular.ttf');
 @include ff(AlegreyaSans-Regular, 'AlegreyaSans-Regular.ttf');
 
-
-
-
 // css start
+body{
+  position: relative;
+}
 // mnTop
 .mnTopWrap{
+  position: fixed;
+  width: 100vw;
+  top: 0; left: 0;
+  z-index: 99999999;
+  background-color: #fff;
     .mnTop{
         @include grid();
         display: flex;
@@ -110,6 +115,7 @@ $h3Lh : #{'min(40px, 1rem)'};
 
 // main
 .mainWrap{
+  margin-top: #{'min(80px, 2rem)'};
     main{
         position: relative;
         height: #{'min(680px, 17rem)'};
@@ -307,6 +313,7 @@ $h3Lh : #{'min(40px, 1rem)'};
                     width: 45%;
                 }
                 li{
+                  transition: all 0.5s;
                     &:nth-child(odd){
                         font-size: $h4Fz;
                         line-height: $h4Lh;
@@ -392,6 +399,7 @@ $h3Lh : #{'min(40px, 1rem)'};
                     cursor: pointer;
                     border-bottom: 1px solid #929ca6;
                     width: calc(100% / 3.5);
+                    min-width: 8s0px;
                 }
             }
             section{
@@ -447,6 +455,7 @@ $h3Lh : #{'min(40px, 1rem)'};
                     cursor: pointer;
                     border-bottom: 1px solid #929ca6;
                     width: calc(100% / 2.5);
+                    min-width: 70px;
                 }
             }
             section{
@@ -471,11 +480,9 @@ $h3Lh : #{'min(40px, 1rem)'};
                     width: calc(100% / 3);
                     overflow: hidden;
                     &:nth-child(2){
-                      background-color: #ccc;
                       margin-left: 1%;
                     }
                     &:nth-child(3){
-                      background-color: #000;
                       margin-left: 1%;
                     }
                       .btns1{
@@ -522,6 +529,7 @@ $h3Lh : #{'min(40px, 1rem)'};
                       height: inherit;
                       display: flex;
                       justify-content: space-between;
+                      margin-left: -100%;
                       .image{
                         width: calc(100% / 3);
                         height: inherit;
@@ -588,6 +596,7 @@ $h3Lh : #{'min(40px, 1rem)'};
                                 padding-left: 20px;
                                 .btn{
                                     width: 40%;
+                                    min-width: 60px;
                                 }
                             }
                             .image{
@@ -751,9 +760,95 @@ $h3Lh : #{'min(40px, 1rem)'};
                         color: #fff;
                         text-align: center;
                         cursor: pointer;
+                        min-width: 125px;
                     }
                 }
             }
         }
     }
 }
+
+/* top버튼 */
+.Top{
+  position: fixed;
+  cursor: pointer;
+  right: 1em;
+  bottom: 2em;
+  color: #fff;
+  font-size: 0.3rem;
+  line-height: 0.3rem;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  background: linear-gradient(180deg, #1a1a1a 0%, #446382 50%, #788bcb 100%);
+  z-index: 9999;
+  transition: all 0.5s;
+}
+
+// cookie
+
+
+
+.cookieWrap{
+  .overlay{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 0.5;
+    top: 0; left: 0;
+    overflow: hidden;
+    z-index: 99999999;
+    background-color: #000;
+  }
+  .cookie{
+    width: 100vw;
+    min-width: none;
+    height: #{'min(160px, 4rem)'};
+    background-color: #ccc;
+    position: fixed;
+    bottom: 0; left: 0;
+    z-index: 99999999999;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    .cookieLeft{
+      width: 70%;
+      p{
+        font-size: $pFz;
+        line-height: $pLh;
+      }
+      .btns{
+        color: blue;
+        font-size: $pFz;
+        line-height: $pLh;
+        width: calc(100% / 12 * 2);
+        a{
+          display: block;
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+        }
+      }
+    }
+    .cookieRight{
+      width: 30%;
+      .cookiebtns{
+        margin: auto;
+        width: 80%;
+        height: #{'min(40px, 1rem)'};
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+        font-size: #{'min(20px, 2em)'};
+        line-height:  #{'min(40px, 1rem)'};
+        text-align: center;
+        margin-top:  #{'min(40px, 1rem)'};
+        transition: background-color 0.5s;
+        &:hover{
+          background-color: #333;
+        }
+      }
+    }
+  }
+}
+
