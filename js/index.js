@@ -1,6 +1,5 @@
 $(function () {
-
-  // cnt01 메인 무한루프 슬라이드
+  // <cnt01 메인 무한루프 슬라이드>
   var cnt01ImageGroup = $('.mainLeft .images');
   var cnt01BtnLeft = $('.mainLeft .btns i').eq(0);
   var cnt01BtnRight = $('.mainLeft .btns i').eq(1);
@@ -45,8 +44,22 @@ $(function () {
   });
 
 
+  // <bnr01 호텔 선택>
+  var bnr01Btn = $('.bnrWrap.bnrWrap01 .btn').eq(0);
+  var bnr01Ul = $('.bnrWrap.bnrWrap01 ul');
+  var bnr01HotelText = $('.bnrWrap.bnrWrap01 h3').eq(0);
+  var bnr01LiText = $('.bnrWrap.bnrWrap01 ul li');
 
-  // bnr02 아코디안
+  bnr01Btn.click(function () {
+    bnr01Ul.toggleClass('show');
+  });
+
+  bnr01LiText.click(function () {
+    bnr01HotelText.text($(this).text())
+  });
+
+
+  // <bnr02 아코디안>
   var cnt02LiLeft = $('ul.left> li:nth-child(odd)');
   var cnt02LiRight = $('ul.right> li:nth-child(odd)');
 
@@ -77,7 +90,7 @@ $(function () {
 
 
 
-  // cnt02 무한루프 슬라이드
+  // <cnt02 무한루프 슬라이드>
   var cnt02ImageGMid = $('.images.middle .artGroup');
   var cnt02ImageGLeft = $('.images.left .artGroup');
   var cnt02ImageGRight = $('.images.right .artGroup');
@@ -183,7 +196,7 @@ $(function () {
 
 
 
-  // Top btn
+  // <Top btn>
   $('.Top').click(function () {
     $('html,body').stop().animate({
       scrollTop: '0'
@@ -206,8 +219,8 @@ $(function () {
   });
 
 
-  
-  // cookie
+
+  // <cookie>
   var cookieBtn = $('.cookiebtns');
   var overlay = $('.overlay');
   var cookieSection = $('.cookie');

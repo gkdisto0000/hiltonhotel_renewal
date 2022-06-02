@@ -1,9 +1,8 @@
-
 // 반응형 기준 (본 페이지는 적응형 웹)
-html{
+html {
     font-size: 3vw;
 
-    body{
+    body {
         font-size: 0.7vw;
     }
 }
@@ -14,6 +13,7 @@ html{
     max-width: 1080px;
     margin: 0 auto;
 }
+
 @mixin image {
     background-position: center;
     background-repeat: no-repeat;
@@ -21,9 +21,10 @@ html{
 }
 
 /* 불필요한 스크롤 삭제 */
-html,body{
-  width: 100%;
-  overflow-x: hidden;
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
 }
 
 // 공통 폰트 영역
@@ -58,24 +59,29 @@ $h3Lh : #{'min(40px, 1rem)'};
 @include ff(AlegreyaSans-Regular, 'AlegreyaSans-Regular.ttf');
 
 // css start
-body{
-  position: relative;
+body {
+    position: relative;
+    font-family: 'PTSerif-Regular';
 }
+
 // mnTop
-.mnTopWrap{
-  position: fixed;
-  width: 100vw;
-  top: 0; left: 0;
-  z-index: 99999999;
-  background-color: #fff;
-    .mnTop{
+.mnTopWrap {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 99999999;
+    background-color: #fff;
+
+    .mnTop {
         @include grid();
         display: flex;
         justify-content: space-between;
         line-height: $mnTopLh;
         color: #929ca6;
         font-weight: 700;
-        h1{
+
+        h1 {
             @include image();
             width: calc(100% / 12 * 2);
             height: #{'min(40px, 1rem)'};
@@ -83,29 +89,34 @@ body{
             background-size: contain;
             margin-top: #{'min(20px, 2em)'};
             cursor: pointer;
-            a{
-              display: block;
-              width: 100%;
-              height: 100%;
+
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
             }
         }
-        .mnMiddle{
-            
-            :nth-child(2){
+
+        .mnMiddle {
+
+            :nth-child(2) {
                 margin-right: #{'min(30px, 3em)'};
             }
         }
-        .mnLeft{
-            nav{
+
+        .mnLeft {
+            nav {
                 display: flex;
                 justify-content: space-between;
-                div{
+
+                div {
                     margin-left: #{'min(30px, 3.0em)'};
                     cursor: pointer;
-                    a{
-                      display: block;
-                      width: 100%;
-                      height: 100%;
+
+                    a {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
                     }
                 }
             }
@@ -114,77 +125,98 @@ body{
 }
 
 // main
-.mainWrap{
-  margin-top: #{'min(80px, 2rem)'};
-    main{
+.mainWrap {
+    margin-top: #{'min(80px, 2rem)'};
+
+    main {
         position: relative;
         height: #{'min(680px, 17rem)'};
         @include grid();
-        .texts{
+
+        .texts {
             width: calc(100% / 12 * 5.5);
             position: relative;
             z-index: 999999;
             padding-top: #{'min(160px, 4rem)'};
-            h4{
+
+            h4 {
                 font-size: $h4Fz;
-                line-height: $h4Lh; 
+                line-height: $h4Lh;
             }
-            h2{
+
+            h2 {
                 font-size: #{'min(50px, 5.0em)'};
                 font-weight: 700;
                 margin-top: #{'min(20px, 2.0em)'};
                 font-family: 'PTSerif-Regular';
             }
-            p{
+
+            p {
                 font-size: $pFz;
                 line-height: $pLh;
                 margin-top: #{'min(20px, 2.0em)'};
                 font-family: 'PatuaOne-Regular';
             }
-            .btn{
+
+            .btn {
                 font-size: $btnFz;
                 line-height: $btnLh;
                 cursor: pointer;
+                width: calc(100% / 12 * 2.2);
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
-        .mainLeft{
+
+        .mainLeft {
             position: absolute;
-            top: 0; right: 0; 
+            top: 0;
+            right: 0;
             width: calc(100% / 12 * 9);
-            .ovrGrid{
-                width: calc((100vw - 1080px) / 2 + 100%)
-                ;
+
+            .ovrGrid {
+                width: calc((100vw - 1080px) / 2 + 100%);
                 min-width: calc((100vw - 80vw) / 2 + 100%);
                 height: #{'min(680px, 17rem)'};
                 overflow: hidden;
-                .images{
+
+                .images {
                     width: 300%;
                     height: inherit;
                     display: flex;
                     justify-content: space-between;
-                    :nth-child(1){
+
+                    :nth-child(1) {
                         background-color: #ccc;
                     }
-                    :nth-child(2){
+
+                    :nth-child(2) {
                         background-color: orangered;
                     }
-                    :nth-child(3){
+
+                    :nth-child(3) {
                         background-color: yellow;
                     }
-                    .image{
+
+                    .image {
                         width: calc(100% / 3);
                         height: inherit;
                         // 이미지 for문
                         @include image();
+
                         @for $img from 1 through 3 {
-                            &.i#{$img}{
+                            &.i#{$img} {
                                 background-image: url('./images/00main/01main_#{$img}.jpg');
                             }
                         }
                     }
                 }
             }
-            .btns{
+
+            .btns {
                 width: calc(100% / 9 * 2);
                 height: #{'min(40px, 1rem)'};
                 z-index: 999999;
@@ -195,7 +227,9 @@ body{
                 position: absolute;
                 color: #757575;
                 bottom: 0;
-                i{
+                font-size: #{'min(15px, 1.5em)'};
+
+                i {
                     cursor: pointer;
                 }
             }
@@ -204,61 +238,78 @@ body{
 }
 
 // banner01
-.bnrWrap{
-    .banner{
-        h5{
+.bnrWrap {
+    .banner {
+        h5 {
             font-size: #{'min(12px, 1.2em)'};
             line-height: #{'min(20px, 2em)'};
         }
-        h3{
+
+        h3 {
             font-size: #{'min(20px, 2em)'};
             line-height: #{'min(40px, 4em)'};
             font-weight: 700;
             font-family: 'PTSerif-Regular';
         }
-        p{
-          font-family: 'PatuaOne-Regular';
+
+        p {
+            font-family: 'PatuaOne-Regular';
         }
-        .btn{
+
+        .btn {
             cursor: pointer;
         }
     }
-    &.bnrWrap01{
+
+    &.bnrWrap01 {
         background-color: #f2f2f2;
-        .banner.bnr01{
+
+        .banner.bnr01 {
             @include grid();
             position: relative;
-            .image{
+
+            .image {
                 @include image();
                 background-image: url('./images/00main/banner01.png');
                 height: #{'min(200px, 5rem)'};
             }
-            .texts{
+
+            .texts {
                 position: absolute;
                 top: 0;
                 left: 0;
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
-                .btn{
+
+                .btn {
                     width: calc(100% / 4);
                     text-align: center;
                     margin-top: #{'min(60px, 6em)'};
                     color: #5d5d5d;
-                    cursor: pointer;
                     transition: all 0.5s;
-                    h3{
-                        &::after{
+                    height: #{'min(80px, 2rem)'};
+                    // overflow: hidden;
+
+                    .calender{
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    h3 {
+                        margin-left: 20px;
+                        &::after {
                             margin: 0 auto;
                             display: block;
                             content: '';
                             width: 60%;
                             height: 2px;
                             background-color: #ccc;
+                            display: none;
                         }
                     }
-                    &:nth-last-child(1){
-                        div{
+
+                    &:nth-last-child(1) {
+                        div {
                             color: #fff;
                             background-color: #131313;
                             height: #{'min(80px, 2rem)'};
@@ -268,76 +319,126 @@ body{
                             margin: 0 auto;
                         }
                     }
-                    &:nth-child(-n+3):hover{
+                    &:nth-child(-n+3):hover {
                         background-color: #333333;
                         color: #fff;
+                    }
+                    label {
+                        display: block;
+                    }
+                    input{
+                        display: inline;
+                        font-family: 'Courier New', Courier, monospace;
+                        height:  #{'min(30px, 3em)'};
+                        margin-top:  #{'min(7px, 0.7em)'};
+                    }
+                    ul{
+                        margin-top:  #{'min(10px, 1em)'};
+                        font-size:  #{'min(150px, 1.5em)'};
+                        line-height: $h4Lh;
+                        width: 100%;
+                        height: #{'min(120px, 3rem)'};
+                        display: block;
+                        box-shadow: 2px 2px 2px rgb(101, 101, 101);
+                        li{
+                            background-color: rgb(227, 227, 227);
+                            color: #446382;
+                            font-family: 'AlegreyaSans-Regular';
+                            font-weight: 700;
+                            height: calc(100%/3);
+                            &:hover{
+                                background-color: #9ccff4;
+                            }
+                        }
+                    }
+                    ul.show{
+                        display: none;
                     }
                 }
             }
         }
     }
-    &.bnrWrap02{
-        .banner.bnr02{
+
+    &.bnrWrap02 {
+        .banner.bnr02 {
             @include grid();
             display: flex;
             justify-content: space-between;
-            .bnrLeft{
+
+            .bnrLeft {
                 width: calc(100% / 12 * 5);
-                h5{
+
+                h5 {
                     margin-top: #{'min(80px, 2rem)'};
                 }
-                h3{
+
+                h3 {
                     font-size: $h3Fz;
                     line-height: $h3Lh;
                 }
-                .btn{
+
+                .btn {
                     font-size: $btnFz;
                     line-height: $btnLh;
                     cursor: pointer;
                     width: calc(100% / 12 * 4);
                     border-bottom: 1px solid #929ca6;
+                    a{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
-            .bnrRight{
+
+            .bnrRight {
                 width: calc(100% / 12 * 7);
                 display: flex;
                 justify-content: space-between;
                 margin-top: #{'min(40px, 1rem)'};
-                p{
+
+                p {
                     padding-top: #{'min(10px, 1em)'};
                 }
-                .left{
+
+                .left {
                     width: 45%;
                 }
-                .right{
+
+                .right {
                     width: 45%;
                 }
-                li{
-                  transition: all 0.5s;
-                    &:nth-child(odd){
+
+                li {
+                    transition: all 0.5s;
+
+                    &:nth-child(odd) {
                         font-size: $h4Fz;
                         line-height: $h4Lh;
                         border-bottom: 1px solid #929ca6;
                         font-weight: 700;
                         cursor: pointer;
-                        &::before{
-                          content: '';
-                          display: inline-block;
-                          width: 8px;
-                          height: 8px;
-                          background-color: #929ca6;
-                          margin-right: 5px;
-                          line-height: $h4Lh;
+
+                        &::before {
+                            content: '';
+                            display: inline-block;
+                            width: 8px;
+                            height: 8px;
+                            background-color: #929ca6;
+                            margin-right: 5px;
+                            line-height: $h4Lh;
                         }
                     }
-                    &:nth-child(even){
+
+                    &:nth-child(even) {
                         font-size: $pFz;
                         line-height: #{'min(20px, 2em)'};
                         transition: all 0.5s;
                         height: 0px;
                         overflow: hidden;
                     }
-                    &:nth-child(odd).show+li{
+
+                    &:nth-child(odd).show+li {
                         height: #{'min(60px, 6em)'};
                     }
                 }
@@ -347,27 +448,31 @@ body{
 }
 
 // content
-.cntWrap{
-    .content{
+.cntWrap {
+    .content {
 
         // cnt 공통영역
         @include grid();
-         h5{
+
+        h5 {
             font-size: $h4Fz;
             line-height: $h4Fz;
         }
-         h3{
+
+        h3 {
             font-size: #{'min(28px, 2.8em)'};
             margin-top: #{'min(20px, 2em)'};
             font-weight: 600;
             font-family: 'PTSerif-Regular';
         }
-         p{
+
+        p {
             font-size: $pFz;
             line-height: $pLh;
             font-family: 'PatuaOne-Regular';
         }
-         .btn{
+
+        .btn {
             font-size: $btnFz;
             line-height: $btnLh;
             cursor: pointer;
@@ -376,46 +481,60 @@ body{
         }
 
         // cnt01
-        &.cnt01{
+        &.cnt01 {
             display: flex;
             justify-content: space-between;
             direction: rtl;
-            header{
+
+            header {
                 margin-left: #{'min(40px, 1rem)'};
                 width: calc(100% / 12 * 5);
                 direction: ltr;
-                h5{
+
+                h5 {
                     margin-top: #{'min(40px, 1rem)'};
                 }
-                .sign{
+
+                .sign {
                     @include image();
                     background-image: url('./images/00main/sign.png');
                     height: #{'min(80px, 2rem)'};
                     width: calc(100% / 2);
                 }
-                .btn{
+
+                .btn {
                     font-size: $btnFz;
                     line-height: $btnLh;
                     cursor: pointer;
                     border-bottom: 1px solid #929ca6;
                     width: calc(100% / 3.5);
                     min-width: 8s0px;
+                    a{
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                    }
                 }
             }
-            section{
+
+            section {
                 width: calc(100% / 12 * 7);
-                .texts{
-                  opacity: 0;
+
+                .texts {
+                    opacity: 0;
                 }
-                .images{
+
+                .images {
                     direction: ltr;
-                    .image.i1{
+
+                    .image.i1 {
                         width: calc(100% / 7 * 5);
                         height: #{'min(280px, 7rem)'};
                         background-image: url('./images/00main/02content01_01.jpg');
                         @include image();
-                    }   
-                    .image.i2{
+                    }
+
+                    .image.i2 {
                         margin: 0 0 0 auto;
                         width: calc(100% / 7 * 4);
                         height: #{'min(280px, 7rem)'};
@@ -427,10 +546,11 @@ body{
         }
 
         // cnt02
-        &.cnt02{
+        &.cnt02 {
             position: relative;
             height: #{'min(680px, 17rem)'};
-            header{
+
+            header {
                 width: calc(100% / 12 * 3);
                 background-color: #131313;
                 height: #{'min(440px, 11rem)'};
@@ -440,135 +560,170 @@ body{
                 margin-left: 2%;
                 position: relative;
                 z-index: 9999999;
-                h5{
+
+                h5 {
                     color: #929ca6;
                 }
-                h3{
+
+                h3 {
                     color: #fff;
                     margin-top: #{'min(20px, 2em)'};
                 }
-                p{
+
+                p {
                     color: #929ca6;
                 }
-                .btn{
+
+                .btn {
                     color: #fff;
                     cursor: pointer;
                     border-bottom: 1px solid #929ca6;
                     width: calc(100% / 2.5);
                     min-width: 70px;
+                    a{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
-            section{
 
-            .texts{
-              display: none;
-            }
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-              article{
-                .slide{
-                  width: calc(300% + 2%);
-                  height: #{'min(680px, 17rem)'};
-                  display: flex;
-                  justify-content: space-between;
-                  margin-left: -100%;
-                  .images{
-                    position: relative;
-                    height: inherit;
-                    width: calc(100% / 3);
-                    overflow: hidden;
-                    &:nth-child(2){
-                      margin-left: 1%;
-                    }
-                    &:nth-child(3){
-                      margin-left: 1%;
-                    }
-                      .btns1{
-                        position: absolute;
-                        top: 45%;
-                        right: 0;
-                        width: calc(100% / 12);
-                        .leftBtn{
-                          .btn{
-                            width: 100%;
-                            height:  #{'min(40px, 1rem)'};
-                            background-color: #fff;
-                            color: #000;
-                            text-align: center;
-                            font-size: $btnFz;
-                            line-height: $btnLh;
-                            i{
-                                cursor: pointer;
-                            }
-                          }
-                        }
-                      }
-                      .btns2{
-                        position: absolute;
-                        top: 45%;
-                        left: 0;
-                        width: calc(100% / 12);
-                        .rightBtn{
-                          .btn{
-                            width: 100%;
-                            height:  #{'min(40px, 1rem)'};
-                            background-color: #fff;
-                            color: #000;
-                            text-align: center;
-                            font-size: $btnFz;
-                            line-height: $btnLh;
-                          }
-                        }
-                      }
-                      
+            section {
 
-                    .artGroup{
-                      width: 300%;
-                      height: inherit;
-                      display: flex;
-                      justify-content: space-between;
-                      margin-left: -100%;
-                      .image{
-                        width: calc(100% / 3);
-                        height: inherit;
-                        background-color: #ccc;
-                        @include image();
-                        @for $img from 1 through 3 {
-                            &.i#{$img}{
-                                background-image: url('./images/00main/02content02_0#{$img}.jpg');
-                            }
-                        }
-                      }
-                    }
-                  }
+                .texts {
+                    display: none;
                 }
-              }
+
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                article {
+                    .slide {
+                        width: calc(300% + 2%);
+                        height: #{'min(680px, 17rem)'};
+                        display: flex;
+                        justify-content: space-between;
+                        margin-left: -100%;
+
+                        .images {
+                            position: relative;
+                            height: inherit;
+                            width: calc(100% / 3);
+                            overflow: hidden;
+
+                            &:nth-child(2) {
+                                margin-left: 1%;
+                            }
+
+                            &:nth-child(3) {
+                                margin-left: 1%;
+                            }
+
+                            .btns1 {
+                                position: absolute;
+                                top: 45%;
+                                right: 0;
+                                width: calc(100% / 12);
+
+                                .leftBtn {
+                                    .btn {
+                                        width: 100%;
+                                        height: #{'min(40px, 1rem)'};
+                                        background-color: #fff;
+                                        color: #000;
+                                        text-align: center;
+                                        font-size: $btnFz;
+                                        line-height: $btnLh;
+
+                                        i {
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .btns2 {
+                                position: absolute;
+                                top: 45%;
+                                left: 0;
+                                width: calc(100% / 12);
+
+                                .rightBtn {
+                                    .btn {
+                                        width: 100%;
+                                        height: #{'min(40px, 1rem)'};
+                                        background-color: #fff;
+                                        color: #000;
+                                        text-align: center;
+                                        font-size: $btnFz;
+                                        line-height: $btnLh;
+                                    }
+                                }
+                            }
+
+
+                            .artGroup {
+                                width: 300%;
+                                height: inherit;
+                                display: flex;
+                                justify-content: space-between;
+                                margin-left: -100%;
+
+                                .image {
+                                    width: calc(100% / 3);
+                                    height: inherit;
+                                    background-color: #ccc;
+                                    @include image();
+
+                                    @for $img from 1 through 3 {
+                                        &.i#{$img} {
+                                            background-image: url('./images/00main/02content02_0#{$img}.jpg');
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
-        &.cnt03{
+
+        &.cnt03 {
             margin-top: #{'min(80px, 2rem)'};
-            header{
-              display: none;
+
+            header {
+                display: none;
             }
-            section{
+
+            section {
                 display: flex;
                 justify-content: space-between;
-                .artLeft{
+
+                .artLeft {
                     width: 50%;
-                    article{
+
+                    article {
                         position: relative;
-                        .btn{
+
+                        .btn {
                             width: calc(100% / 6 * 2.5);
+                            a{
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                            }
                         }
-                        .image{
+
+                        .image {
                             width: 100%;
                             height: #{'min(520px, 13rem)'};
                             background-image: url('./images/00main/02content03_01.jpg');
                             @include image();
                         }
-                        .texts{
+
+                        .texts {
                             position: absolute;
                             bottom: 0;
                             left: 0;
@@ -580,49 +735,62 @@ body{
                         }
                     }
                 }
-                .artRight{
+
+                .artRight {
                     width: 50%;
 
-                    article{
-                        &:nth-child(1){
+                    article {
+                        &:nth-child(1) {
                             display: flex;
                             justify-content: space-between;
                             width: 100%;
-                            .texts{
+
+                            .texts {
                                 background-color: #fff;
                                 width: 50%;
                                 padding-top: 20px;
                                 padding-bottom: #{'min(40px, 1rem)'};
                                 padding-left: 20px;
-                                .btn{
+
+                                .btn {
                                     width: 40%;
                                     min-width: 60px;
+                                    a{
+                                        display: block;
+                                        width: 100%;
+                                        height: 100%;
+                                    }
                                 }
                             }
-                            .image{
+
+                            .image {
                                 width: 50%;
-                                height:  #{'min(280px, 7rem)'};
+                                height: #{'min(280px, 7rem)'};
                                 background-color: #ccc;
                                 background-image: url('./images/00main/02content03_02_1.JPG');
                                 @include image();
                             }
                         }
-                        &:nth-child(2){
+
+                        &:nth-child(2) {
                             padding-left: 20px;
                             padding-top: #{'min(40px, 1rem)'};
                             height: #{'min(240px, 6rem)'};
                             background-color: #131313;
                             color: #fff;
-                            i{
+
+                            i {
                                 color: #4daef3;
                             }
-                            p{
+
+                            p {
                                 margin-top: #{'min(30px, 3em)'};
                                 font-size: $pFz;
                                 line-height: #{'min(20px, 2em)'};
                             }
-                            .tag{
-                                p{
+
+                            .tag {
+                                p {
                                     font-size: #{'min(12px, 1.2em)'};
                                     line-height: #{'min(20px, 2em)'};
                                     margin-top: #{'min(20px, 2em)'};
@@ -635,47 +803,58 @@ body{
         }
 
         // cnt04
-        &.cnt04{
+        &.cnt04 {
             margin-top: #{'min(80px, 2rem)'};
-            
-            header{
-                h5{
+
+            header {
+                h5 {
                     line-height: #{'min(40px, 1rem)'};
                 }
             }
 
-            section{
+            section {
                 display: flex;
                 justify-content: space-between;
-                article{
+
+                article {
                     width: calc(100% / 3 - 20px);
                     margin: 0 10px;
-                    .image{
-                        cursor: pointer;
+
+                    .image {
                         transition: all 0.5s;
-                        &:hover{
+
+                        &:hover {
                             filter: grayscale(0);
                         }
+
                         filter: grayscale(1);
                         background-color: #ccc;
                         width: 100%;
                         height: #{'min(280px, 7rem)'};
                         @include image();
+
                         @for $img from 1 through 3 {
-                            &.i#{$img}{
+                            &.i#{$img} {
                                 background-image: url('./images/00main/02content04_0#{$img}.jpg');
                             }
                         }
                     }
-                    .texts{
-                        h3{
+
+                    .texts {
+                        h3 {
                             margin-top: 0;
                             font-size: #{'min(20px, 2em)'};
                             line-height: #{'min(80px, 2rem)'};
                             color: #1d1d1d;
                             cursor: pointer;
+                            a{
+                                display: block;
+                                width: 100%;
+                                height: 100%;
+                            }
                         }
-                        p{
+
+                        p {
                             font-size: #{'min(15px, 1.5em)'};
                             line-height: #{'min(20px, 2em)'};
                             color: #333333;
@@ -688,10 +867,11 @@ body{
 }
 
 // footer
-.ftrWrap{
+.ftrWrap {
     background-color: #efefef;
     margin-top: #{'min(80px, 2rem)'};
-    footer{
+
+    footer {
         @include grid();
         color: #1d1d1d;
         font-size: #{'min(15px, 1.5em)'};
@@ -699,63 +879,74 @@ body{
         justify-content: space-between;
         padding-top: #{'min(80px, 2rem)'};
         padding-bottom: #{'min(80px, 2rem)'};
-        ul{
+
+        ul {
             width: calc(100% / 4);
-            &:nth-child(1){
-                li{
-                    &:nth-child(1){
+
+            &:nth-child(1) {
+                li {
+                    &:nth-child(1) {
                         line-height: #{'min(40px, 1rem)'};
                     }
-                    &:nth-child(2){
+
+                    &:nth-child(2) {
                         line-height: #{'min(40px, 1rem)'};
                     }
-                    &:nth-child(3){
+
+                    &:nth-child(3) {
                         line-height: #{'min(80px, 2rem)'};
                     }
-                    &:nth-child(4){
-                        line-height: #{'min(20px, 2em)'};
-                    }
-                }
-            }
-            
-            &:nth-child(n+2){
-                li{
-                    &:nth-child(1){
-                        margin-top: #{'min(40px, 1rem)'};
-                        line-height: #{'min(40px, 1rem)'};
-                    }
-                    &:nth-child(2){
-                        line-height: #{'min(80px, 2rem)'};
-                    }
-                    &:nth-child(3){
+
+                    &:nth-child(4) {
                         line-height: #{'min(20px, 2em)'};
                     }
                 }
             }
 
-            &:nth-child(3){
-                li{
-                    &:nth-child(3){
+            &:nth-child(n+2) {
+                li {
+                    &:nth-child(1) {
+                        margin-top: #{'min(40px, 1rem)'};
+                        line-height: #{'min(40px, 1rem)'};
+                    }
+
+                    &:nth-child(2) {
+                        line-height: #{'min(80px, 2rem)'};
+                    }
+
+                    &:nth-child(3) {
+                        line-height: #{'min(20px, 2em)'};
+                    }
+                }
+            }
+
+            &:nth-child(3) {
+                li {
+                    &:nth-child(3) {
                         font-size: #{'min(15px, 1.5em)'};
                         font-weight: 700;
-                        span{
+
+                        span {
                             cursor: pointer;
                             margin: 0 10px;
                             font-weight: 700;
                             font-size: #{'min(15px, 1.5em)'};
-                            a{
-                              width: 100%;
-                              height: 100%;
-                              display: block;
+
+                            a {
+                                width: 100%;
+                                height: 100%;
+                                display: block;
                             }
                         }
                     }
                 }
             }
-            &:nth-child(4){
+
+            &:nth-child(4) {
                 text-align: right;
-                li{
-                    &:nth-child(1){
+
+                li {
+                    &:nth-child(1) {
                         background-color: #000;
                         color: #fff;
                         text-align: center;
@@ -769,86 +960,95 @@ body{
 }
 
 /* top버튼 */
-.Top{
-  position: fixed;
-  cursor: pointer;
-  right: 1em;
-  bottom: 2em;
-  color: #fff;
-  font-size: 0.3rem;
-  line-height: 0.3rem;
-  width: 3em;
-  height: 3em;
-  text-align: center;
-  background: linear-gradient(180deg, #1a1a1a 0%, #446382 50%, #788bcb 100%);
-  z-index: 9999;
-  transition: all 0.5s;
+.Top {
+    position: fixed;
+    cursor: pointer;
+    right: 1em;
+    bottom: 2em;
+    color: #fff;
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+    width: 3em;
+    height: 3em;
+    text-align: center;
+    background: linear-gradient(180deg, #1a1a1a 0%, #446382 50%, #788bcb 100%);
+    z-index: 9999;
+    transition: all 0.5s;
 }
 
 // cookie
 
 
 
-.cookieWrap{
-  .overlay{
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    opacity: 0.5;
-    top: 0; left: 0;
-    overflow: hidden;
-    z-index: 99999999;
-    background-color: #000;
-  }
-  .cookie{
-    width: 100vw;
-    min-width: none;
-    height: #{'min(160px, 4rem)'};
-    background-color: #ccc;
-    position: fixed;
-    bottom: 0; left: 0;
-    z-index: 99999999999;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    .cookieLeft{
-      width: 70%;
-      p{
-        font-size: $pFz;
-        line-height: $pLh;
-      }
-      .btns{
-        color: blue;
-        font-size: $pFz;
-        line-height: $pLh;
-        width: calc(100% / 12 * 2);
-        a{
-          display: block;
-          width: 100%;
-          height: 100%;
-          cursor: pointer;
-        }
-      }
-    }
-    .cookieRight{
-      width: 30%;
-      .cookiebtns{
-        margin: auto;
-        width: 80%;
-        height: #{'min(40px, 1rem)'};
+.cookieWrap {
+    .overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: 99999999;
         background-color: #000;
-        color: #fff;
-        cursor: pointer;
-        font-size: #{'min(20px, 2em)'};
-        line-height:  #{'min(40px, 1rem)'};
-        text-align: center;
-        margin-top:  #{'min(40px, 1rem)'};
-        transition: background-color 0.5s;
-        &:hover{
-          background-color: #333;
-        }
-      }
     }
-  }
-}
 
+    .cookie {
+        width: 100vw;
+        min-width: none;
+        height: #{'min(160px, 4rem)'};
+        background-color: #ccc;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 99999999999;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+
+        .cookieLeft {
+            width: 70%;
+
+            p {
+                font-size: $pFz;
+                line-height: $pLh;
+            }
+
+            .btns {
+                color: blue;
+                font-size: $pFz;
+                line-height: $pLh;
+                width: calc(100% / 12 * 2);
+
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .cookieRight {
+            width: 30%;
+
+            .cookiebtns {
+                margin: auto;
+                width: 80%;
+                height: #{'min(40px, 1rem)'};
+                background-color: #000;
+                color: #fff;
+                cursor: pointer;
+                font-size: #{'min(20px, 2em)'};
+                line-height: #{'min(40px, 1rem)'};
+                text-align: center;
+                margin-top: #{'min(40px, 1rem)'};
+                transition: background-color 0.5s;
+
+                &:hover {
+                    background-color: #333;
+                }
+            }
+        }
+    }
+}
