@@ -2,6 +2,7 @@ $(function () {
   // <cnt01 nav>li click anchor, addClass>
   var cnt01Li = $('.content.cnt01 ul li');
   var loc = [];
+  var cnt01All = $('.content.cnt01 ul li').eq(0);
 
   for (var i = 0; i < $('article').length; i++) {
     loc[i] = $('article').eq(i).offset().top;
@@ -16,6 +17,11 @@ $(function () {
   cnt01Art.click(function(){
     $(this).toggleClass('show');
   });
+
+  cnt01All.click(function(){
+    cnt01Art.toggleClass('show');
+  });
+
 
   // <Top btn>
   $('.Top').click(function () {

@@ -175,6 +175,9 @@ body{
           &:hover{
             font-size:  #{'min(20px, 2em)'};
           }
+          &:nth-child(1){
+            font-size:  #{'min(20px, 2em)'};
+          }
         }
       }
     }
