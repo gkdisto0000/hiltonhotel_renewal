@@ -235,6 +235,11 @@ body {
           h3 {
             font-size: #{'min(13px, 1.3em)'};
             line-height: #{'min(40px, 1rem)'};
+            transition: background-color 0.5s;
+            cursor: pointer;
+            &:hover{
+              background-color: #000;
+            }
           }
         }
       }
@@ -423,6 +428,7 @@ body {
                               text-align: center;
                               font-size: $btnFz;
                               line-height: $btnLh;
+                              cursor: pointer;
 
                               i {
                                   cursor: pointer;
@@ -446,6 +452,7 @@ body {
                               text-align: center;
                               font-size: $btnFz;
                               line-height: $btnLh;
+                              cursor: pointer;
                           }
                       }
                   }
@@ -736,6 +743,12 @@ body {
             li {
               cursor: pointer;
               font-family: 'PTSerif-Regular';
+              transition: background-color 0.5s;
+              &:nth-child(odd){
+                &:hover{
+                  background-color: #000;
+                }
+              }
             }
           }
         }
@@ -768,6 +781,7 @@ body {
               justify-content: space-between;
               width: 300%;
               height: inherit;
+              transition: all 0.5s;
 
               .map {
                 width: calc(100% / 3);
@@ -794,6 +808,7 @@ body {
             width: 300%;
             display: flex;
             justify-content: space-between;
+            transition: all 0.5s;
 
             article {
               margin-top: #{'min(80px, 2rem)'};
@@ -869,6 +884,8 @@ body {
               height: 7px;
               outline: 2px solid #333;
               border-radius: 50%;
+              cursor: pointer;
+              transition: background-color 0.5s;
             }
 
             .show {

@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./css/sub3.min.css">
   <script src="./js/jquery-3.6.0.min.js"></script>
   <script src="./js/common.js"></script>
+  <script src="./js/sub3.js" defer></script>
 </head>
 
 <body>
@@ -34,16 +35,18 @@
         <div class="ovrGridText">
           <div class="dim"></div>
           <div class="texts">
-            <h5>01</h5>
-            <h3>/ Hilton Rewards</h3>
-            <h5>02</h5>
-            <h3>/ Room Service</h3>
-            <h5>03</h5>
-            <h3>/ Activities</h3>
-            <h5>04</h5>
-            <h3>/ How to Arrive</h3>
-            <h5>05</h5>
-            <h3>/ Reviews</h3>
+            <h5>/ 01</h5>
+            <h3 data-num="0">Rates & Promos</h3>
+            <h5>/ 02</h5>
+            <h3 data-num="1">Hilton Rewards</h3>
+            <h5>/ 03</h5>
+            <h3 data-num="2">Room Service</h3>
+            <h5>/ 04</h5>
+            <h3 data-num="3">Activities</h3>
+            <h5>/ 05</h5>
+            <h3 data-num="4">How to Arrive</h3>
+            <h5>/ 06</h5>
+            <h3 data-num="5">Reviews</h3>
           </div>
         </div>
       </div>
@@ -52,8 +55,9 @@
 
   <!-- cnt01 -->
   <div class="cntWrap">
-    <div class="content cnt01">
+    <div class="content cnt01" data-num="0">
       <header>
+        <h5>01</h5>
         <h3>OUR SPECIAL<br>
           RATES & <br>
           PROMOS</h3>
@@ -75,10 +79,10 @@
 
   <!-- cnt02 hilton rewards -->
   <div class="cntWrap">
-    <div class="content cnt02">
+    <div class="content cnt02" data-num="1">
       <header>
         <div class="texts">
-          <h5>01</h5>
+          <h5>02</h5>
           <h4>/ Hilton Rewards</h4>
           <h3>The<br>
             Rooms</h3>
@@ -144,9 +148,9 @@
 
   <!-- cnt03 room service-->
   <div class="cntWrap">
-    <div class="content cnt03">
+    <div class="content cnt03" data-num="2">
       <header>
-        <h5>02</h5>
+        <h5>03</h5>
         <h4>/ Room Service</h4>
       </header>
       <section>
@@ -224,9 +228,9 @@
 
   <!-- cnt04 activities-->
   <div class="cntWrap">
-    <div class="content cnt04">
+    <div class="content cnt04" data-num="3">
       <header>
-        <h5>03</h5>
+        <h5>04</h5>
         <h4>/ Activities</h4>
         <h3>Activities in the area</h3>
         <div class="pGroup">
@@ -265,24 +269,24 @@
 
   <!-- cnt05 how to arrive-->
   <div class="cntWrap">
-    <div class="content cnt05">
+    <div class="content cnt05" data-num="4">
       <header>
         <div class="texts">
           <div class="txtLeft">
-            <h5>04</h5>
+            <h5>05</h5>
             <h4>/ How to Arrive</h4>
             <h3>Location</h3>
 
             <ul>
-              <li>Conrad-Seoul</li>
+              <li data-index="0">Conrad-Seoul</li>
               <li>콘래드 서울</li>
             </ul>
             <ul>
-              <li>Millennium-Hilton-Seoul</li>
+              <li data-index="1">Millennium-Hilton-Seoul</li>
               <li>밀레니엄 힐튼 서울</li>
             </ul>
             <ul>
-              <li>hilton-seoul-gangnam</li>
+              <li data-index="2">hilton-seoul-gangnam</li>
               <li>힐튼 가든 인 서울 강남</li>
             </ul>
 
@@ -326,9 +330,9 @@
 
   <!-- cnt06 Reviews-->
   <div class="cntWrap">
-    <div class="content cnt06">
+    <div class="content cnt06" data-num="5">
       <header>
-        <h5>05</h5>
+        <h5>06</h5>
         <h4>/ Reviews</h4>
       </header>
       <section>

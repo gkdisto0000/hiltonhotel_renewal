@@ -176,7 +176,7 @@ body {
           width: 100%;
           height: 100%;
           @include image();
-          background-image: url('./images/');
+          background-image: url('./images/02SUB_2/01.\ sub02_main_01.jpg');
         }
       }
     }
@@ -232,6 +232,11 @@ body {
           h3 {
             font-size: #{'min(13px, 1.3em)'};
             line-height: #{'min(40px, 1rem)'};
+            cursor: pointer;
+            transition: background-color 0.5s;
+            &:hover{
+              background-color: #000;
+            }
           }
         }
       }
@@ -301,14 +306,11 @@ body {
           height: 100%;
           background-color: #ccc;
           overflow: hidden;
-
           .artGroup {
             width: 100%;
             height: 300%;
-
             .image {
               height: calc(100% / 3);
-
               @for $img from 1 through 3 {
                 &.i#{$img} {
                   background-image: url('./images/02SUB_2/02.\ sub02_cnt01_01_#{$img}.jpg');
@@ -362,21 +364,37 @@ body {
 
         .btn {
           width: 100%;
-          border: 2px solid #929ca6;
           height: inherit;
+          position: relative;
+          font-size: #{'min(30px, 3em)'};
+
+          .up {
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            border: 2px solid #929ca6;
+          }
+
+          .down {
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            cursor: pointer;
+            border: 2px solid #929ca6;
+          }
 
           i {
             width: 100%;
+            height: 100%;
             text-align: center;
-            height: 50%;
-            outline: 1px solid #929ca6;
-            font-size: #{'min(30px, 3em)'};
             line-height: #{'min(60px, 6em)'};
-            cursor: pointer;
-            color: #929ca6;
           }
         }
-
       }
     }
 
@@ -402,7 +420,6 @@ body {
               height: #{'min(600px, 15rem)'};
               padding-right: calc(100% / 7 * 3);
               position: relative;
-
               p {
                 margin-top: #{'min(40px, 1rem)'};
               }
@@ -418,21 +435,37 @@ body {
                 left: 10px;
               }
             }
-
             .btns {
               position: absolute;
               bottom: 0;
-              right: 0;
-
+              right: 0px;
+              height: #{'min(120px, 3rem)'};
+              width: calc(100% / 12 * 1.2);
               .btn {
                 background-color: #000;
                 height: #{'min(120px, 3rem)'};
-
+                position: relative;
+                .up {
+                  width: 100%;
+                  height: 50%;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  cursor: pointer;
+                  outline: 1px solid #929ca6;
+                }
+                .down {
+                  width: 100%;
+                  height: 50%;
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  outline: 1px solid #929ca6;
+                }
                 i {
                   width: 100%;
                   text-align: center;
                   height: 50%;
-                  outline: 1px solid #929ca6;
                   font-size: #{'min(30px, 3em)'};
                   line-height: #{'min(60px, 6em)'};
                   cursor: pointer;
@@ -440,7 +473,6 @@ body {
                 }
               }
             }
-
             .view {
               width: 100%;
               height: #{'min(400px, 10rem)'};
@@ -465,6 +497,7 @@ body {
           }
 
           .right {
+            z-index: 9999999;
             width: calc(100% / 12 * 5);
             position: absolute;
             top: 0;
@@ -491,6 +524,7 @@ body {
             }
 
             .btn {
+              outline: 10xp solid red;
               height: #{'min(80px, 2rem)'};
               background-color: #000;
               color: #fff;
@@ -499,6 +533,11 @@ body {
               text-align: center;
               font-size: $btnFz;
               cursor: pointer;
+              a{
+                display: block;
+                width: 100%;
+                height: 200%;
+              }
             }
           }
         }
