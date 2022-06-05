@@ -169,10 +169,25 @@ $(function () {
   });
 
 
-  // 추후 삭제
-  // cnt06LeftBtn.css({
-  //   outline: '5px solid red'
-  // });
+  // <Top btn>
+  $('.Top').click(function () {
+    $('html,body').stop().animate({
+      scrollTop: '0'
+    }, 500)
+  });
+  $('.Top').css({
+    opacity: '0'
+  });
 
-
+  $(window).scroll(function () {
+    if ($(window).scrollTop() > 100) {
+      $('.Top').css({
+        opacity: '1'
+      });
+    } else {
+      $('.Top').css({
+        opacity: '0'
+      });
+    }
+  });
 });
