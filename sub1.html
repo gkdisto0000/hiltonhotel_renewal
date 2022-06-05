@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="./css/sub1.min.css">
   <script src="./js/jquery-3.6.0.min.js"></script>
   <script src="./js/common.js"></script>
+  <script src="./js/sub1.js" defer></script>
 </head>
 
 <body>
@@ -37,22 +38,21 @@
     <div class="content cnt01">
       <header>
         <ul>
-          <li>ALL</li>
-          <li>HOSPITALITY</li>
-          <li>VIEW</li>
-          <li>FOOD</li>
-          <li>STUFF</li>
-          <li>AFFILIATE</li>
-          <li>VISION</li>
-          <li>LEISURE</li>
-          <li>BREAK</li>
+          <li data-num="0">HOSPITALITY</li>
+          <li data-num="1">VIEW</li>
+          <li data-num="2">FOOD</li>
+          <li data-num="3">STUFF</li>
+          <li data-num="4">AFFILIATE</li>
+          <li data-num="5">VISION</li>
+          <li data-num="6">LEISURE</li>
+          <li data-num="7">BREAK</li>
         </ul>
       </header>
 
       <section>
         <div class="artLeft">
-          <article class="a1">
-            <div class="texts">
+          <article class="a1" data-num="0">
+            <div class="texts" data-num="0">
               <h4>/ HILTON REWARDS</h4>
               <p>힐튼 호텔은 ‘최고의 호스피탈리티 기업’을 목표로 오랜<br> 세월동안 전통을 유지하며 고객들의 사랑을 받아왔습니다.<br>
                 여러 세계 최고의 럭셔리 호텔과 어깨를 나란히 하며<br>
@@ -68,7 +68,7 @@
             <div class="image i1"></div>
           </article>
           <div class="artGroup">
-            <article class="a2">
+            <article class="a2" data-num="1">
               <div class="texts">
                 <h4>/ HILTON REWARDS</h4>
                 <h3>THE BEST <br>
@@ -79,7 +79,7 @@
               </div>
               <div class="image i2"></div>
             </article>
-            <article class="a3">
+            <article class="a3" data-num="2">
               <div class="texts">
                 <h4>/ HILTON REWARDS</h4>
                 <h3>THE BEST <br>
@@ -91,7 +91,7 @@
               <div class="image i3"></div>
             </article>
           </div>
-          <article class="a4">
+          <article class="a4" data-num="3">
             <div class="texts">
               <h4>/ HILTON REWARDS</h4>
               <p>저희 힐튼 호텔은 더 많은 고객이 다양한 생활영역에서<br>
@@ -109,7 +109,7 @@
         </div>
 
         <div class="artRight">
-          <article class="a5">
+          <article class="a5" data-num="4">
             <div class="texts">
               <h4>/ HILTON REWARDS</h4>
               <p>힐튼 호텔은 최고의 관광명소에 위치하여<br>
@@ -120,7 +120,7 @@
             </div>
             <div class="image i5"></div>
           </article>
-          <article class="a6">
+          <article class="a6" data-num="5">
             <div class="texts">
               <h4>/ HILTON REWARDS</h4>
               <p>힐튼 호텔은 수많은 국빈의 방문과 국제행사를 치러내며<br>
@@ -135,7 +135,7 @@
             </div>
             <div class="image i6"></div>
           </article>
-          <article class="a7">
+          <article class="a7" data-num="6">
             <div class="texts">
               <h4>/ HILTON REWARDS</h4>
               <h3>HILTON HOTEL’S <br>
@@ -146,7 +146,7 @@
             </div>
             <div class="image i7"></div>
           </article>
-          <article class="a8">
+          <article class="a8" data-num="7">
             <div class="texts">
               <h4>/ HILTON REWARDS</h4>
               <p>저희 힐튼 호텔은 더 많은 고객이 다양한 생활영역에서<br>
