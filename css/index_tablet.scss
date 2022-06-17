@@ -1,0 +1,134 @@
+// 반응형 기준 (본 페이지는 적응형 웹)
+html {
+  font-size: 3vw;
+
+  body {
+      font-size: 0.7vw;
+  }
+}
+
+// mixin 사용
+@mixin grid {
+  width: 80%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+@mixin image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* 불필요한 스크롤 삭제 */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+// 공통 폰트 영역
+/* html 3vw = 1rem = 40px, body 0.7vw = 1em = 10px*/
+
+// mnTop
+$mnTopNav : #{'min(23px, 2.3em)'};
+$mnTopLh : #{'min(80px, 2rem)'};
+
+// font-size
+$h4Fz : #{'min(12px, 1.2em)'};
+$h4Lh : #{'min(40px, 1rem)'};
+$pFz : #{'min(17px, 1.7em)'};
+$pLh : #{'min(30px, 3em)'};
+$btnFz : #{'min(15px, 1.5em)'};
+$btnLh : #{'min(40px, 1rem)'};
+$h3Fz : #{'min(30px, 3em)'};
+$h3Lh : #{'min(40px, 1rem)'};
+
+
+// font-family
+@mixin ff($fontname, $url) {
+  @font-face {
+      font-family: '#{$fontname}';
+      src: url('./fonts/#{$url}') format('truetype');
+  }
+}
+
+@include ff(PTSerif-Regular, 'PTSerif-Regular.ttf');
+@include ff(PatuaOne-Regular, 'PatuaOne-Regular.ttf');
+@include ff(AlegreyaSans-Regular, 'AlegreyaSans-Regular.ttf');
+
+// css start
+body {
+  position: relative;
+  font-family: 'PTSerif-Regular';
+}
+
+// mnTop
+.mnTopWrap{
+  .mnTop{
+    @include grid();
+    display: flex;
+    justify-content: space-between;
+    height: $mnTopLh;
+    h1{
+      width: calc(100% / 8);
+      background-image: url('./images/00main/00logo.JPG');
+      @include image();
+      background-size: contain;
+      cursor: pointer;
+    }
+    .mnLeft{
+      width: calc(100% / 8 * 7);
+      nav{
+        display: flex;
+        justify-content: space-between;
+        div{
+          width: calc(100% / 3);
+          text-align: center;
+          a{
+            font-size: $mnTopNav;
+            line-height: $mnTopLh;
+          }
+        }
+      }
+    }
+  }
+}
+
+// common 
+.images{
+  @include image();
+}
+.image{
+  @include image();
+}
+
+// main
+.mainWrap{
+  main{
+    .images{
+      background-color: pink;
+      width: 100vw;
+      height: #{'min(400px, 10rem)'};
+    }
+    .texts{
+      @include grid();
+      h2{
+        font-size: #{'min(50px, 5em)'};
+        font-weight: 700;
+        margin-top: #{'min(-40px, -1rem)'};
+        height: #{'min(80px, 8em)'};
+        line-height: #{'min(40px, 4em)'};
+      }
+    }
+  }
+}
+
+// bnr01
+.bnrWrap.bnrWrap01{
+  margin-top: #{'min(40px, 1rem)'};
+  .banner.bnr01{
+    @include grid();
+    
+  }
+}
