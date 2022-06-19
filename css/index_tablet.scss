@@ -3,7 +3,7 @@ html {
   font-size: 3vw;
 
   body {
-      font-size: 0.7vw;
+    font-size: 0.7vw;
   }
 }
 
@@ -48,8 +48,8 @@ $h3Lh : #{'min(40px, 1rem)'};
 // font-family
 @mixin ff($fontname, $url) {
   @font-face {
-      font-family: '#{$fontname}';
-      src: url('./fonts/#{$url}') format('truetype');
+    font-family: '#{$fontname}';
+    src: url('./fonts/#{$url}') format('truetype');
   }
 }
 
@@ -64,28 +64,33 @@ body {
 }
 
 // mnTop
-.mnTopWrap{
-  .mnTop{
+.mnTopWrap {
+  .mnTop {
     @include grid();
     display: flex;
     justify-content: space-between;
     height: $mnTopLh;
-    h1{
+
+    h1 {
       width: calc(100% / 8);
       background-image: url('./images/00main/00logo.JPG');
       @include image();
       background-size: contain;
       cursor: pointer;
     }
-    .mnLeft{
+
+    .mnLeft {
       width: calc(100% / 8 * 7);
-      nav{
+
+      nav {
         display: flex;
         justify-content: space-between;
-        div{
+
+        div {
           width: calc(100% / 3);
           text-align: center;
-          a{
+
+          a {
             font-size: $mnTopNav;
             line-height: $mnTopLh;
           }
@@ -96,25 +101,28 @@ body {
 }
 
 // common 
-.images{
+.images {
   @include image();
 }
-.image{
+
+.image {
   @include image();
 }
 
 // main
-.mainWrap{
-  main{
-    .images{
+.mainWrap {
+  main {
+    .images {
       background-color: pink;
       width: 100vw;
       height: #{'min(400px, 10rem)'};
     }
-    .texts{
+
+    .texts {
       @include grid();
-      h2{
-        font-size: #{'min(50px, 5em)'};
+
+      h2 {
+        font-size: #{'min(80px, 8em)'};
         font-weight: 700;
         margin-top: #{'min(-40px, -1rem)'};
         height: #{'min(80px, 8em)'};
@@ -125,10 +133,207 @@ body {
 }
 
 // bnr01
-.bnrWrap.bnrWrap01{
+.bnrWrap.bnrWrap01 {
   margin-top: #{'min(40px, 1rem)'};
-  .banner.bnr01{
+  background-color: #efefef;
+
+  .banner.bnr01 {
     @include grid();
-    
+
+    .texts {
+      display: flex;
+      justify-content: space-between;
+      height: #{'min(160px, 4rem)'};
+
+      .btn {
+        cursor: pointer;
+        text-align: center;
+        width: calc(100% / 4 - 20px);
+        margin: 0 10px;
+        background-color: #fff;
+        box-shadow: 2px 2px 2px rgb(101, 101, 101);
+        height: #{'min(80px, 2rem)'};
+        margin-top: #{'min(40px, 1rem)'};
+        line-height: #{'min(80px, 2rem)'};
+
+        label {
+          display: block;
+        }
+
+        input {
+          display: none;
+          font-family: 'Courier New', Courier, monospace;
+          height: #{'min(30px, 3em)'};
+          margin-top: #{'min(7px, 0.7em)'};
+        }
+
+        &:nth-last-child(1) {
+          color: #fff;
+          background-color: #000;
+        }
+      }
+
+      ul.show {
+        display: none;
+      }
+    }
+  }
+}
+
+// content
+.cntWrap {
+
+  .content {
+    &.cnt01 {
+      header {
+        display: none;
+      }
+
+      section {
+        article {
+          .images {
+            width: 100%;
+            background-color: #ccc;
+            height: #{'min(360px, 8rem)'};
+            width: 100vw;
+            overflow: hidden;
+            .artGroup{
+              width: 300%;
+              display: flex;
+              justify-content: space-between;
+              .image{
+                width: calc(100% / 3);
+              }
+            }
+          }
+
+          .texts {
+            background-color: #000;
+            height: #{'min(160px, 4rem)'};
+            color: #fff;
+
+            h3 {
+              i {
+                cursor: pointer;
+              }
+
+              text-align: center;
+              @include grid();
+              font-size: #{'min(28px, 2.8em)'};
+              padding-top: #{'min(40px, 1rem)'};
+            }
+
+            .btn {
+              @include grid();
+              width: calc(100% / 8 * 2);
+              margin: 0 0 0 auto;
+
+              a {
+                font-size: #{'min(13px, 1.3em)'};
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.cnt02 {
+      @include grid();
+
+      header {
+        display: none;
+      }
+
+      section {
+        article {
+          display: flex;
+          justify-content: space-between;
+
+          h3 {
+            font-size: $h3Fz;
+            line-height: $h3Lh;
+            font-weight: 700;
+          }
+
+          .btn {
+            font-size: $btnFz;
+            line-height: $btnLh;
+            padding-top: #{'min(40px, 1rem)'};
+          }
+          .image {
+            background-color: #ccc;
+            width: 50%;
+            height: #{'min(320px, 8rem)'};
+          }
+
+          .texts {
+            width: 50%;
+            padding-left: calc(100% / 8);
+            padding-top: #{'min(80px, 2rem)'};
+          }
+        }
+      }
+    }
+
+    &.cnt03{
+      @include grid();
+      header{
+        display: none;
+      }
+      section{
+        article{
+          display: flex;
+          justify-content: space-between;
+          .image{
+            width: 50%;
+            height: #{'min(280px, 7rem)'};
+            background-color: #ccc;
+          }
+          .texts{
+            padding-left: 20px;
+            padding-top: #{'min(60px, 6em)'};
+            width: 50%;
+            background-color: #e8e9eb;
+            h3{
+              font-size: $h3Fz;
+              line-height: $h3Lh;
+            }
+            p{
+              font-size: $pFz;
+              line-height: $pLh;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// footer
+.ftrWrap{
+  background-color: #efefef;
+  footer{
+    padding-top: #{'min(40px, 1rem)'};
+    padding-bottom: #{'min(40px, 1rem)'};
+    margin-top: #{'min(80px, 2rem)'};
+    height: #{'min(200px, 5rem)'};
+    h1{
+      width: calc(100% / 8 * 2);
+      outline: 2px solid red;
+      height: #{'min(40px, 1rem)'};
+      margin: 0 auto;
+    }
+    h4{
+      text-align: center;
+      font-size: $h4Fz;
+      line-height: $h4Lh;
+      margin-top: #{'min(20px, 2em)'};
+    }
+    ul{
+      width: calc(100% / 8 * 2);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
